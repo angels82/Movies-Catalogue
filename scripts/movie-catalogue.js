@@ -16,6 +16,7 @@ function startApp() {
     $('#linkLogin').click(showLoginView);
     $('#linkRegister').click(showRegisterView);
     $('#linkListMovies').click(listMovies);
+    $('#linkListMyMovies').click(listMyMovies);
     $('#linkCreateMovie').click(showCreateMovieView);
     $('#linkLogout').click(logoutUser);
 
@@ -41,12 +42,14 @@ function startApp() {
             $('#linkLogin').hide();
             $('#linkRegister').hide();
             $('#linkListMovies').show();
+            $('#linkListMyMovies').show();
             $('#linkCreateMovie').show();
             $('#linkLogout').show();
         } else {
             $('#linkLogin').show();
             $('#linkRegister').show();
             $('#linkListMovies').hide();
+            $('#linkListMyMovies').hide();
             $('#linkCreateMovie').hide();
             $('#linkLogout').hide();
         }
@@ -102,12 +105,44 @@ function startApp() {
         }
     }
 
+    function listMyMovies() {
+        $('#myMovies').empty();
+        showView('viewMyMovies');
+
+        $.ajax({
+            method: "GET",
+            url: kinveyBaseUrl + 'appdata/' + kinveyAppKey + '/movies',
+            headers: getKinveyUserAuthHeaders(),
+            success: loadMoviesSuccess,
+            error: handleAjaxError
+        });
+
+        function loadMoviesSuccess(movies) {
+            showInfo('Movies loaded.');
+
+            if (movies.length == 0) {
+                $('#movies').text('No movies in the library.');
+            } else {
+                let moviesTable = $('<table>')
+                    .append($('<tr>')
+                        .append('<th>Title</th><th>Director</th><th>Year</th><th>Description</th><th>Actions</th>'));
+
+                for (let movie of movies) {
+                    if (movie._acl.creator == sessionStorage.getItem('userId'))
+                        appendMovieRow(movie, moviesTable);
+                }
+
+                $('#myMovies').append(moviesTable);
+            }
+        }
+    }
+
     function appendMovieRow(movie, moviesTable) {
         let links= [];
 
         if(movie._acl.creator == sessionStorage['userId']) {
-            let deleteLink = $('<a href="#">[Delete]</a>').click(function() { deleteMovie(movie) });
-            let editLink = $('<a href="#">[Edit]</a>').click(function() { loadMovieForEdit(movie) });
+            let deleteLink = $('<button>Delete</button>').click(function() { deleteMovie(movie) });
+            let editLink = $('<button>Edit</button>').click(function() { loadMovieForEdit(movie) });
 
             links = [deleteLink, ' ', editLink];
         }
@@ -241,8 +276,32 @@ function startApp() {
         });
 
         function editMoviesSuccess(response) {
-            listMovies();
+            if($('#viewMovies').css('display') != 'none')
+                listMovies();
+            else
+                listMyMovies();
+
             showInfo('Movie edited.');
+        }
+    }
+
+    function loadMovieForEdit(movie) {
+        $.ajax({
+            method: "GET",
+            url: kinveyBaseUrl + 'appdata/' + kinveyAppKey + '/movies/' + movie._id,
+            headers: getKinveyUserAuthHeaders(),
+            success: loadMovieForEditSuccess,
+            error: handleAjaxError
+        });
+
+        function loadMovieForEditSuccess(movie) {
+            $('#formEditMovie input[name=id]').val(movie._id);
+            $('#formEditMovie input[name=title]').val(movie.title);
+            $('#formEditMovie input[name=director]').val(movie.director);
+            $('#formEditMovie input[name=year]').val(movie.year);
+            $('#formEditMovie textarea[name=descr]').val(movie.description);
+
+            showView('viewEditMovie');
         }
     }
 
@@ -256,7 +315,10 @@ function startApp() {
         });
 
         function deleteMovieSuccess() {
-            listMovies();
+            if($('#viewMovies').css('display') != 'none')
+                listMovies();
+            else
+                listMyMovies();
             showInfo('Movie deleted.');
         }
     }
@@ -286,25 +348,6 @@ function startApp() {
         function showError(errorMsg) {
             $('#errorBox').text('Error: ' + errorMsg);
             $('#errorBox').show();
-        }
-    }
-
-    function loadMovieForEdit(movie) {
-        $.ajax({
-            method: "GET",
-            url: kinveyBaseUrl + 'appdata/' + kinveyAppKey + '/movies/' + movie._id,
-            headers: getKinveyUserAuthHeaders(),
-            success: loadMovieForEditSuccess,
-            error: handleAjaxError
-        });
-
-        function loadMovieForEditSuccess(movie) {
-            $('#formEditMovie input[name=id]').val(movie._id);
-            $('#formEditMovie input[name=title]').val(movie.title);
-            $('#formEditMovie input[name=author]').val(movie.author);
-            $('#formEditMovie textarea[name=descr]').val(movie.description);
-
-            showView('viewEditMovie');
         }
     }
 }

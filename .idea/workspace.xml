@@ -23,9 +23,10 @@
       <file leaf-file-name="movie-catalogue.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../Movies Catalogue/scripts/movie-catalogue.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-825">
-              <caret line="229" column="61" lean-forward="false" selection-start-line="229" selection-start-column="61" selection-end-line="229" selection-end-column="61" />
+            <state relative-caret-position="188">
+              <caret line="277" column="46" lean-forward="false" selection-start-line="277" selection-start-column="46" selection-end-line="277" selection-end-column="46" />
               <folding>
+                <element signature="n#!!block;n#listMovies#0;n#!!block;n#startApp#0" expanded="false" />
                 <element signature="n#!!block;n#loginUser#0;n#!!block;n#startApp#0" expanded="false" />
                 <element signature="n#!!block;n#logoutUser#0;n#!!block;n#startApp#0" expanded="false" />
                 <element signature="n#!!block;n#registerUser#0;n#!!block;n#startApp#0" expanded="false" />
@@ -58,13 +59,12 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Movies Catalogue/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="97" column="35" lean-forward="false" selection-start-line="97" selection-start-column="35" selection-end-line="97" selection-end-column="35" />
+            <state relative-caret-position="201">
+              <caret line="105" column="36" lean-forward="true" selection-start-line="105" selection-start-column="36" selection-end-line="105" selection-end-column="36" />
               <folding>
                 <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#section#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#section#5;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#section#6;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#section#8;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
@@ -87,6 +87,9 @@
       <find>login</find>
       <find>getKi</find>
       <find>book</find>
+      <find>listMovies</find>
+      <find>formedi</find>
+      <find>conso</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -97,6 +100,8 @@
         <option value="$PROJECT_DIR$/scripts/book-library.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/scripts/movie-catalogue.js" />
+        <option value="$PROJECT_DIR$/../Movies Catalogue/index.html" />
+        <option value="$PROJECT_DIR$/../Movies Catalogue/scripts/movie-catalogue.js" />
       </list>
     </option>
   </component>
@@ -278,18 +283,18 @@
       <updated>1480425917885</updated>
       <workItem from="1480425924873" duration="17613000" />
       <workItem from="1480514584334" duration="6093000" />
-      <workItem from="1480856853996" duration="2539000" />
+      <workItem from="1480856853996" duration="5634000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26245000" />
+    <option name="totallyTimeSpent" value="29340000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24925596" sideWeight="0.48202613" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24925596" sideWeight="0.48202613" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -331,6 +336,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#!!block;n#listMovies#0;n#!!block;n#startApp#0" expanded="false" />
             <element signature="n#!!block;n#loginUser#0;n#!!block;n#startApp#0" expanded="false" />
             <element signature="n#!!block;n#logoutUser#0;n#!!block;n#startApp#0" expanded="false" />
             <element signature="n#!!block;n#registerUser#0;n#!!block;n#startApp#0" expanded="false" />
@@ -363,7 +369,6 @@
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#5;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#section#6;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#8;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
@@ -374,6 +379,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#!!block;n#listMovies#0;n#!!block;n#startApp#0" expanded="false" />
             <element signature="n#!!block;n#loginUser#0;n#!!block;n#startApp#0" expanded="false" />
             <element signature="n#!!block;n#logoutUser#0;n#!!block;n#startApp#0" expanded="false" />
             <element signature="n#!!block;n#registerUser#0;n#!!block;n#startApp#0" expanded="false" />
@@ -406,17 +412,8 @@
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#5;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#section#6;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#8;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Movies Catalogue/styles/movie-catalogue.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="18" lean-forward="false" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -430,23 +427,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../Movies Catalogue/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="97" column="35" lean-forward="false" selection-start-line="97" selection-start-column="35" selection-end-line="97" selection-end-column="35" />
+        <state relative-caret-position="201">
+          <caret line="105" column="36" lean-forward="true" selection-start-line="105" selection-start-column="36" selection-end-line="105" selection-end-column="36" />
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#5;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#section#6;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#8;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../Movies Catalogue/styles/movie-catalogue.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="18" lean-forward="false" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../Movies Catalogue/scripts/movie-catalogue.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-825">
-          <caret line="229" column="61" lean-forward="false" selection-start-line="229" selection-start-column="61" selection-end-line="229" selection-end-column="61" />
+        <state relative-caret-position="188">
+          <caret line="277" column="46" lean-forward="false" selection-start-line="277" selection-start-column="46" selection-end-line="277" selection-end-column="46" />
           <folding>
+            <element signature="n#!!block;n#listMovies#0;n#!!block;n#startApp#0" expanded="false" />
             <element signature="n#!!block;n#loginUser#0;n#!!block;n#startApp#0" expanded="false" />
             <element signature="n#!!block;n#logoutUser#0;n#!!block;n#startApp#0" expanded="false" />
             <element signature="n#!!block;n#registerUser#0;n#!!block;n#startApp#0" expanded="false" />

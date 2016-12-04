@@ -14,6 +14,7 @@
         <a href="#" id="linkLogin">Login</a>
         <a href="#" id="linkRegister">Register</a>
         <a href="#" id="linkListMovies">List Movies</a>
+        <a href="#" id="linkListMyMovies">My Movies</a>
         <a href="#" id="linkCreateMovie">Create Movie</a>
         <a href="#" id="linkLogout">Logout</a>
         <span id="loggedInUser"></span>
@@ -70,6 +71,13 @@
             </div>
         </section>
 
+        <section id="viewMyMovies">
+            <h1>My Movies</h1>
+            <div id="myMovies">
+
+            </div>
+        </section>
+
         <section id="viewCreateMovie">
             <h1>Create new movie</h1>
             <form id="formCreateMovie">
@@ -99,7 +107,7 @@
             <h1>Edit existing movie</h1>
             <form id="formEditMovie">
                 <div>
-                    <input type="hidden" id="id" required />
+                    <input type="hidden" name="id" required />
                     <div>Title:</div>
                     <div>
                         <input type="text" name="title" required />
@@ -112,6 +120,7 @@
                     <div>
                         <input type="number" name="year" required />
                     </div>
+                    <div>Description</div>
                     <div>
                         <textarea name="descr" rows="10"></textarea>
                     </div>
