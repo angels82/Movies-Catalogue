@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Catalogue</title>
+    <script src="scripts/jquery-3.1.1.min.js"></script>
+    <script src="scripts/movie-catalogue.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/movie-catalogue.css" />
+</head>
+<body onload="startApp()">
+
+    <header id="menu">
+        <a href="#" id="linkHome">Home</a>
+        <a href="#" id="linkLogin">Login</a>
+        <a href="#" id="linkRegister">Register</a>
+        <a href="#" id="linkListMovies">List Movies</a>
+        <a href="#" id="linkCreateMovie">Create Movie</a>
+        <a href="#" id="linkLogout">Logout</a>
+        <span id="loggedInUser"></span>
+    </header>
+
+    <main>
+        <section id="loadingBox">Loading...</section>
+        <section id="infoBox">Info</section>
+        <section id="errorBox">Error</section>
+
+        <section id="viewHome">
+            <h1>Welcome</h1>
+            Welcome to our movie catalogue.
+        </section>
+
+        <section id="viewLogin">
+            <h1>Please login</h1>
+            <form id="formLogin">
+                <div>Username</div>
+                <div>
+                    <input type="text" name="username" required />
+                </div>
+                <div>Password</div>
+                <div>
+                    <input type="password" name="password" required />
+                </div>
+                <div>
+                    <input type="submit" id="buttonLoginUser" value="Login"/>
+                </div>
+            </form>
+        </section>
+
+        <section id="viewRegister">
+            <h1>Please register here</h1>
+            <form id="formRegister">
+                <div>Username</div>
+                <div>
+                    <input type="text" name="username" required />
+                </div>
+                <div>Password</div>
+                <div>
+                    <input type="password" name="password" required />
+                </div>
+                <div>
+                    <input type="submit" id="buttonRegisterUser" value="Register"/>
+                </div>
+            </form>
+        </section>
+
+        <section id="viewMovies">
+            <h1>Movies</h1>
+            <div id="movies">
+
+            </div>
+        </section>
+
+        <section id="viewCreateMovie">
+            <h1>Create new movie</h1>
+            <form id="formCreateMovie">
+                <div>Title</div>
+                <div>
+                    <input type="text" name="title" required />
+                </div>
+                <div>Director</div>
+                <div>
+                    <input type="text" name="director" required />
+                </div>
+                <div>Year</div>
+                <div>
+                    <input type="number" name="year" required />
+                </div>
+                <div>Description</div>
+                <div>
+                    <textarea name="descr" rows="10"></textarea>
+                </div>
+                <div>
+                    <input type="submit" id="buttonCreateMovie" value="Create"/>
+                </div>
+            </form>
+        </section>
+
+        <section id="viewEditMovie">
+            <h1>Edit existing movie</h1>
+            <form id="formEditMovie">
+                <div>
+                    <input type="hidden" id="id" required />
+                    <div>Title:</div>
+                    <div>
+                        <input type="text" name="title" required />
+                    </div>
+                    <div>Director:</div>
+                    <div>
+                        <input type="text" name="director"/>
+                    </div>
+                    <div>Year</div>
+                    <div>
+                        <input type="number" name="year" required />
+                    </div>
+                    <div>
+                        <textarea name="descr" rows="10"></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" id="buttonEditMovie" value="Edit"/>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>Movie Catalogue - Simple SPA Application</footer>
+
+</body>
+</html>
