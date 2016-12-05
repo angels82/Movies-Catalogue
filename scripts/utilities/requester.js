@@ -1,15 +1,15 @@
+function request(method, url, headers, data) {
+    return $.ajax({
+        method,
+        url,
+        headers,
+        data: JSON.stringify(data)
+    });
+}
+
 class Requester {
     constructor(baseURL) {
         this.baseURL = baseURL;
-    }
-
-    static request(method, url, headers, data) {
-        return $.ajax({
-            method,
-            url,
-            headers,
-            data: JSON.stringify(data)
-        });
     }
 
     get(path, headers) {
