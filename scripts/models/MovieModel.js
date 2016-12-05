@@ -20,27 +20,27 @@ class MovieModel {
         this.auth = auth;
     }
 
-    headers() {
+    get headers() {
         return this.auth.getHeaders();
     }
 
     createMovie(data) {
-        return this.requester.post('/movies', data, this.headers());
+        return this.requester.post('/movies', this.headers, data);
     }
 
     getMovie(id) {
-        return this.requester.get(`/movies/${id}`, this.headers());
+        return this.requester.get(`/movies/${id}`, this.headers);
     }
 
     getMovies() {
-        return this.requester.get('/movies', this.headers());
+        return this.requester.get('/movies', this.headers);
     }
 
     updateMovie(id, data) {
-        return this.requester.put(`/movies/${id}`, data, this.headers())
+        return this.requester.put(`/movies/${id}`, this.headers, data)
     }
 
     deleteMovie(id) {
-        return this.requester.delete(`/movies/${id}`, this.headers());
+        return this.requester.delete(`/movies/${id}`, this.headers);
     }
 }
