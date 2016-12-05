@@ -14,10 +14,6 @@ class MovieController {
         this.renderer = renderer;
     }
 
-    showHome() {
-        this.homeView.renderView();
-    }
-
     listMovies() {
         let movies = this.getMovies();
         this.listMoviesView.renderView(movies);

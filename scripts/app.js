@@ -3,7 +3,7 @@
     const appKey = "kid_BykT85ZQx";
     const appSecret = "ca246b15f1a648e19f05adffcefc0401";
 
-    let authenticationService = new AuthenticationService(appKey, appSecret);
+    let authenticationService = new Authentication(appKey, appSecret);
     let requester = new Requester();
     let renderer = new Renderer(authenticationService);
 
@@ -16,7 +16,7 @@
     let movieDetailsView = new MovieDetailsView(renderer);
 
     let userModel = new UserModel();
-    let movieModel = new MoviesModel();
+    let movieModel = new MovieModel();
     let commentModel = new CommentModel();
 
     let userController = new UserController(userModel, loginView, registerView, listMoviesView, homeView, renderer);
@@ -25,17 +25,20 @@
     let commentController = new CommentsController(commentModel);
 
     const notLoggedUserLinks = [
-        $('<a href="#" id="linkHome">Home</a>').click(movieController.showHome),
-        $('<a href="#" id="linkLogin">Login</a>').click(userController.showLogin),
-        $('<a href="#" id="linkRegister">Register</a>').click(userController.showRegister)
+        $('<a href="#" id="linkHome">Home</a>').click(homeView.renderView),
+        $('<a href="#" id="linkLogin">Login</a>').click(loginView.renderView),
+        $('<a href="#" id="linkRegister">Register</a>').click(registerView.renderView)
     ];
     const loggedUserLinks = [
-        $('<a href="#" id="linkListMovies">List Movies</a>').click(movieController.listMovies),
-        $('<a href="#" id="linkListMyMovies">My Movies</a>').click(movieController.listMyMovies),
-        $('<a href="#" id="linkCreateMovie">Create Movie</a>').click(movieController.createMovie),
-        $('<a href="#" id="linkLogout">Logout</a>').click(userController.logOutUser)
+        $('<a href="#" id="linkListMovies">List Movies</a>').click(movieController.listMovies.bind(movieController)).hide(),
+        $('<a href="#" id="linkListMyMovies">My Movies</a>').click(movieController.listMyMovies.bind(movieController)).hide(),
+        $('<a href="#" id="linkCreateMovie">Create Movie</a>').click(movieController.createMovie.bind(movieController)).hide(),
+        $('<a href="#" id="linkLogout">Logout</a>').click(userController.logOutUser.bind(userController)).hide()
     ];
     renderer.setLinks(notLoggedUserLinks, loggedUserLinks);
-
+    $('#menu').append(notLoggedUserLinks);
+    $('#menu').append(loggedUserLinks);
+    
+    homeView.renderView();
 
 }());

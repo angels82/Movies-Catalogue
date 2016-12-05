@@ -8,7 +8,7 @@ class LoginView {
 
     renderView() {
         let view = $('<div>');
-
+        alert('Login');
         this.renderer.renderView(view);
     }
 

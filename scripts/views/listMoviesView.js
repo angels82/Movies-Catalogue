@@ -2,8 +2,9 @@
 // Appends links to to the separate entities in the table based on the logged in user authentication
 
 class ListMoviesView {
-    constructor(renderer) {
+    constructor(renderer, movieController) {
         this.renderer = renderer;
+        this.movieController = movieController;
     }
 
     renderView(movies) {

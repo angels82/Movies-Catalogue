@@ -14,14 +14,6 @@ class UserController {
         this.renderer= renderer;
     }
 
-    showLogin() {
-        this.loginView.renderView();
-    }
-
-    showRegister() {
-        this.registerView.renderView();
-    }
-
     logInUser() {
         let data = this.loginView.submitData();
 

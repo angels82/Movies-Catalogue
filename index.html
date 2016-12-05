@@ -4,19 +4,13 @@
     <meta charset="UTF-8">
     <title>Movie Catalogue</title>
     <script src="scripts/libraries/jquery-3.1.1.min.js"></script>
-    <script src="scripts/movie-catalogue.js"></script>
+    <script src="scripts/libraries/system.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/movie-catalogue.css" />
 </head>
-<body onload="startApp()">
+<body>
 
 <header id="menu">
-    <a href="#" id="linkHome">Home</a>
-    <a href="#" id="linkLogin">Login</a>
-    <a href="#" id="linkRegister">Register</a>
-    <a href="#" id="linkListMovies">List Movies</a>
-    <a href="#" id="linkListMyMovies">My Movies</a>
-    <a href="#" id="linkCreateMovie">Create Movie</a>
-    <a href="#" id="linkLogout">Logout</a>
+
     <span id="loggedInUser"></span>
 </header>
 
@@ -137,6 +131,25 @@
 </main>
 
 <footer>Movie Catalogue - Simple SPA Application</footer>
+
+<script src="scripts/controllers/CommentController.js"></script>
+<script src="scripts/controllers/MovieController.js"></script>
+<script src="scripts/controllers/UserController.js"></script>
+<script src="scripts/views/HomeView.js"></script>
+<script src="scripts/views/LoginView.js"></script>
+<script src="scripts/views/RegisterView.js"></script>
+<script src="scripts/views/ListMoviesView.js"></script>
+<script src="scripts/views/CreateMovieView.js"></script>
+<script src="scripts/views/EditMovieView.js"></script>
+<script src="scripts/views/MovieDetailsView.js"></script>
+<script src="scripts/models/CommentModel.js"></script>
+<script src="scripts/models/UserModel.js"></script>
+<script src="scripts/models/MovieModel.js"></script>
+<script src="scripts/utilities/requester.js"></script>
+<script src="scripts/utilities/renderer.js"></script>
+<script src="scripts/services/authentication.js"></script>
+
+<script src="scripts/app.js"></script>
 
 </body>
 </html>

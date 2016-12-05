@@ -6,23 +6,19 @@ class Renderer {
         this.authService = authService;
     }
 
-    setLinks(notLoggedInEvents, loggedInEvents) {
-        this.notLoggedUserLinks = notLoggedUserLinks;
-        this.loggedUserLinks = loggedUserLinks;
+    setLinks(notLoggedLinks, loggedLinks) {
+        this.notLoggedLinksIds = notLoggedLinks.map(link => '#' + link.attr('id'));
+        this.loggedLinks = loggedLinks.map(link => '#' + link.attr('id'));
     }
 
     renderLinks() {
-        $('#menu').empty();
-        let links = [];
-
-        if(this.authService.isLoggedIn())
-            links = this.loggedUserLinks;
-        else
-            links = this.notLoggedUserLinks;
-
-        links.forEach((link) => {
-            $('#menu').append(link);
-        });
+        if (this.authService.isLoggedIn()) {
+            this.notLoggedLinksIds.forEach((id) => $(id).hide());
+            this.loggedLinks.forEach((id) => $(id).show());
+        } else {
+            this.loggedLinks.forEach((id) => $(id).hide());
+            this.notLoggedLinksIds.forEach((id) => $(id).show());
+        }
     }
 
     renderGreeting() {
