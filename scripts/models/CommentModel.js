@@ -18,7 +18,7 @@ class CommentModel {
     }
 
     getComments(movieId) {
-        return this.requester.get(`/comments?query={"movieId":${movieId}}`, this.headers);
+        return this.requester.get(`/comments?query={"movieId":"${movieId}"}`, this.headers);
     }
 
     updateComment(id, data) {
