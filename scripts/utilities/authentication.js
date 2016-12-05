@@ -13,9 +13,14 @@ class Authentication {
     }
 
     getHeaders() {
-        return {
-            'Content-Type': 'application/json',
-            'Authorization': `Basic ${this.isLoggedIn() || this.getToken()}`
+        let headers = {
+            'Content-Type': 'application/json'
         };
+        if (this.isLoggedIn()) {
+            headers['Authorization'] = `Kinvey ${this.isLoggedIn()}`
+        } else {
+            headers['Authorization'] = `Basic ${this.getToken()}`
+        }
+        return headers;
     }
 }
