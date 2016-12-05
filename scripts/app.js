@@ -19,9 +19,9 @@
     let movieModel = new MovieModel(requester, authenticationService);
     let commentModel = new CommentModel(requester, authenticationService);
 
-    let userController = new UserController(userModel, loginView, registerView, listMoviesView, homeView, renderer);
     let movieController =
         new MovieController(movieModel, commentModel, homeView, listMoviesView, createMovieView, editMovieView, movieDetailsView, renderer);
+    let userController = new UserController(userModel, movieController, loginView, registerView, listMoviesView, homeView, renderer);
     let commentController = new CommentsController(commentModel);
 
     const notLoggedUserLinks = [
@@ -30,7 +30,7 @@
         $('<a href="#" id="linkRegister">Register</a>').click(registerView.renderView)
     ];
     const loggedUserLinks = [
-        $('<a href="#" id="linkListMovies">List Movies</a>').click(movieController.listMovies.bind(movieController)).hide(),
+        $('<a href="#" id="linkListMovies">List Movies</a>').click(movieController.getMovies.bind(movieController)).hide(),
         $('<a href="#" id="linkListMyMovies">My Movies</a>').click(movieController.listMyMovies.bind(movieController)).hide(),
         $('<a href="#" id="linkCreateMovie">Create Movie</a>').click(movieController.createMovie.bind(movieController)).hide(),
         $('<a href="#" id="linkLogout">Logout</a>').click(userController.logOutUser.bind(userController)).hide()

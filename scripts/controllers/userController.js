@@ -5,8 +5,9 @@
 // and handles the result from the request
 
 class UserController {
-    constructor(model, loginView, registerView, listMoviesView, homeView, renderer) {
+    constructor(model, movieController, loginView, registerView, listMoviesView, homeView, renderer) {
         this.model = model;
+        this.movieController = movieController;
         this.loginView = loginView;
         this.registerView = registerView;
         this.listMoviesView = listMoviesView;
@@ -24,7 +25,11 @@ class UserController {
             sessionStorage.setItem('username', data.username);
             console.log(this.renderer);
             _self.renderer.renderInfo('Login successful.');
-        }).catch();
+
+            _self.movieController.getMovies();
+        }).catch(function (errorMessage) {
+            _self.handleError(errorMessage);
+        });
 
 
     }
@@ -39,16 +44,20 @@ class UserController {
             sessionStorage.setItem('username', data.username);
 
             _self.renderer.renderInfo('Registration successful.');
-        }).catch();
+
+            _self.listMoviesView.renderView();
+        }).catch(function (errorMessage) {
+            _self.handleError(errorMessage);
+        });
     }
 
     logOutUser() {
         let _self = this;
 
         this.model.logout().then(function () {
-            sessionStorage.clear();
-
             _self.renderer.renderInfo('Logout successful.');
+
+            _self.homeView.renderView();
         }).catch();
     }
 

@@ -9,7 +9,7 @@ class ListMoviesView {
 
     renderView(movies) {
         let view = $('<div>');
-
+        alert(movies);
         this.renderer.renderView(view);
     }
 }

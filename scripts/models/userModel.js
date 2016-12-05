@@ -17,7 +17,8 @@ class UserModel {
     }
 
     logout() {
-        return this.requester.logout('/logout', this.auth.getHeaders());
+        sessionStorage.clear();
+        return this.requester.login('', this.auth.getHeaders(), {});
     }
 }
 

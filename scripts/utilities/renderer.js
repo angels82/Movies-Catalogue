@@ -39,6 +39,9 @@ class Renderer {
     renderInfo(message) {
         $('#infoBox').text(message);
         $('#infoBox').show();
+        setTimeout(function () {
+            $('#infoBox').fadeOut();
+        }, 3000);
         $('#infoBox').click(function() {
             $(this).fadeOut();
         });

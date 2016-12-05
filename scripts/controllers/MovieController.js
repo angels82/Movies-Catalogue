@@ -14,15 +14,49 @@ class MovieController {
         this.renderer = renderer;
     }
 
-    listMovies() {
-        let movies = this.getMovies();
-        this.listMoviesView.renderView(movies);
+    getMovie(movieId) {
+        let _self = this;
+
+        this.movieModel.getMovie(movieId)
+            .then(function (movie) {
+                _self.listMoviesView.renderView(movies);
+            })
+            .catch(function (errorMessage) {
+                _self.renderer.handleError(errorMessage);
+            });
+    }
+
+    getMovies() {
+        let _self = this;
+
+        this.movieModel.getMovies()
+            .then(function (movies) {
+                _self.listMoviesView.renderView(movies);
+                _self.renderer.renderInfo('Movies loaded.');
+            })
+            .catch(function (errorMessage) {
+                _self.renderer.handleError(errorMessage);
+            });
+    }
+
+    getMyMovies(userId) {
+        let _self = this;
+
+        this.movieModel.getMovies()
+            .then(function (movies) {
+                let myMovies = movies.filter((movie) => movie._acl.creator == sessionStorage.getItem('userID'));
+                _self.listMoviesView.renderView(movies);
+                _self.renderer.renderInfo('Movies loaded.');
+            })
+            .catch(function (errorMessage) {
+                _self.renderer.handleError(errorMessage);
+            });
     }
 
     listMyMovies() {
         let userId = sessionStorage.getItem('userId');
         let myMovies = this.getMyMovies(userId);
-        this.listMoviesView(myMovies);
+        this.listMoviesView.renderView(myMovies);
     }
 
     createMovie() {
@@ -40,24 +74,19 @@ class MovieController {
         this.movieDetailsView.renderView(movie, comments);
     }
 
-    getMovie(movieId) {
 
-    }
-
-    getMovies() {
-        this.movieModel.getMovies()
-            .then(function (movies) {
-                console.log(movies);
-            })
-            .catch()
-    }
-
-    getMyMovies(userId) {
-        // Calls this.getMovies and filters by userId
-    }
 
     postMovie() {
+        let _self = this;
+        let movie = this.createMovieView.submitData();
 
+        this.movieModel.createMovie(movie)
+            .then(function () {
+                _self.renderer.renderInfo('Movie created.');
+            })
+            .catch(function (errorMessage) {
+                _self.renderer.handleError(errorMessage);
+            });
     }
 
     putMovie(movieId) {
