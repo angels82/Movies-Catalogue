@@ -13,7 +13,7 @@ class RegisterView {
     }
 
     submitData() {
-        let data = {};
+        let data = {username: 'b', password: 'b'};
 
         return data;
     }

@@ -23,4 +23,8 @@ class Authentication {
         }
         return headers;
     }
+
+    getUsername() {
+        sessionStorage.getItem('username');
+    }
 }

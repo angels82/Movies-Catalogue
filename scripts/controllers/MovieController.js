@@ -45,7 +45,11 @@ class MovieController {
     }
 
     getMovies() {
-
+        this.movieModel.getMovies()
+            .then(function (movies) {
+                console.log(movies);
+            })
+            .catch()
     }
 
     getMyMovies(userId) {

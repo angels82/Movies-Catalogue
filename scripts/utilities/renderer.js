@@ -40,7 +40,7 @@ class Renderer {
         $('#infoBox').text(message);
         $('#infoBox').show();
         $('#infoBox').click(function() {
-            $(this).fadeOut()
+            $(this).fadeOut();
         });
     }
 

@@ -3,8 +3,21 @@
 // On success sends authtoken to userController
 
 class UserModel {
-    constructor() {
+    constructor(requester, auth) {
+        this.requester = requester;
+        this.auth = auth;
     }
 
+    login(userData) {
+        return this.requester.login('/login', this.auth.getHeaders(), userData);
+    }
+
+    register(userData) {
+        return this.requester.login('', this.auth.getHeaders(), userData);
+    }
+
+    logout() {
+        return this.requester.logout('/logout', this.auth.getHeaders());
+    }
 }
 

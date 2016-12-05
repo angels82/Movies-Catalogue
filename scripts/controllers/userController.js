@@ -15,37 +15,41 @@ class UserController {
     }
 
     logInUser() {
-        let data = this.loginView.submitData();
+        let userData = this.loginView.submitData();
+        let _self = this;
 
-        function success(data) {
+        this.model.login(userData).then(function (data) {
             sessionStorage.setItem('authToken', data._kmd.authtoken);
             sessionStorage.setItem('userId', data._id);
             sessionStorage.setItem('username', data.username);
+            console.log(this.renderer);
+            _self.renderer.renderInfo('Login successful.');
+        }).catch();
 
-            this.renderer.renderInfo('Login successful.');
-        }
+
     }
 
     registerUser() {
-        let data = this.registerView.submitData();
+        let userData = this.registerView.submitData();
+        let _self = this;
 
-        function success(data) {
+        this.model.register(userData).then(function (data) {
             sessionStorage.setItem('authToken', data._kmd.authtoken);
             sessionStorage.setItem('userId', data._id);
             sessionStorage.setItem('username', data.username);
 
-            this.renderer.renderInfo('Registration successful.');
-        }
+            _self.renderer.renderInfo('Registration successful.');
+        }).catch();
     }
 
     logOutUser() {
+        let _self = this;
 
-
-        function success() {
+        this.model.logout().then(function () {
             sessionStorage.clear();
 
-            this.renderer.renderInfo('Logout successful.');
-        }
+            _self.renderer.renderInfo('Logout successful.');
+        }).catch();
     }
 
     handleError(errorMessage) {

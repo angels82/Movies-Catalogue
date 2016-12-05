@@ -4,7 +4,7 @@
     const appSecret = "ca246b15f1a648e19f05adffcefc0401";
 
     let authenticationService = new Authentication(appKey, appSecret);
-    let requester = new Requester();
+    let requester = new Requester(baseUrl + 'appdata/' + appKey);
     let renderer = new Renderer(authenticationService);
 
     let homeView = new HomeView(renderer);
@@ -15,9 +15,9 @@
     let editMovieView = new EditMovieView(renderer);
     let movieDetailsView = new MovieDetailsView(renderer);
 
-    let userModel = new UserModel();
-    let movieModel = new MovieModel();
-    let commentModel = new CommentModel();
+    let userModel = new UserModel(requester, authenticationService);
+    let movieModel = new MovieModel(requester, authenticationService);
+    let commentModel = new CommentModel(requester, authenticationService);
 
     let userController = new UserController(userModel, loginView, registerView, listMoviesView, homeView, renderer);
     let movieController =
@@ -38,7 +38,12 @@
     renderer.setLinks(notLoggedUserLinks, loggedUserLinks);
     $('#menu').append(notLoggedUserLinks);
     $('#menu').append(loggedUserLinks);
-    
+
     homeView.renderView();
+
+
+
+
+    //userController.logInUser();
 
 }());
