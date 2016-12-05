@@ -1,12 +1,12 @@
-// Renders Register View
-// Sends register data to userController through submitData()
+// Renders the Edit Movie View through the passed in renderer
+// Sends data to MovieController by submitData()
 
-class RegisterView {
+class EditMovieView {
     constructor(renderer) {
         this.renderer = renderer;
     }
 
-    renderView() {
+    renderView(movie) {
         let view = $('<div>');
 
         this.renderer.renderView(view);
