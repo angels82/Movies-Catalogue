@@ -40,9 +40,17 @@ class MovieController {
             .catch((errorMessage) => _self.handleError(errorMessage));
     }
 
-    editMovie(movieId) {
-        let movie = this.getMovie(movieId);
-        this.editMovieView.renderView(movie);
+    editMovie() {
+        let _self=this;
+        let movieData = _self.editMovieView.submitData();
+        this.movieModel.updateMovie(movieData._id, movieData).then(function(){
+            _self.listMyMovies();
+            _self.renderer.renderInfo('Movie Edited.');
+        })
+    }
+
+    loadMovieforEdit(){
+        
     }
 
     showMovieDetails(movieId) {
