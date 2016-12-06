@@ -48,6 +48,11 @@ table td {
     background: #EEE;
 }
 
+table a {
+    text-decoration: none;
+    color: #006622;
+}
+
 td.movieActions {
     /*display: inline-block;*/
     white-space: nowrap;
@@ -137,4 +142,8 @@ button {
 
 input, textarea {
     background: #EEE;
+}
+
+body {
+    background: #c1d9a0;
 }

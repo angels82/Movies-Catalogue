@@ -15,22 +15,27 @@ class EditMovieView {
                     <div>
                         <input type="text" name="title" required />
                     </div>
+                    <br/>
                     <div>Director</div>
                     <div>
                         <input type="text" name="director" required />
                     </div>
+                    <br/>
                     <div>Year</div>
                     <div>
                         <input type="number" name="year" required />
                     </div>
+                    <br/>
                     <div>Description</div>
                     <div>
                         <textarea name="descr" rows="10"></textarea>
                     </div>
+                    <br/>
                     <div>Trailer Url (youtube):</div>
                     <div>
                          <input type="text" name="trailerUrl">
                     </div>
+                    <br/>
                     <div>
                         <input type="submit" id="buttonEditMovie" value="Save"/>
                     </div>
