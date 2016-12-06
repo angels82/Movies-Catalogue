@@ -24,7 +24,6 @@ function htmlEscape(string){
 function escapeObject(data){
 
     for (let label in data){
-        // console.log(htmlEscape(data[label]));
         data[label] = htmlEscape(data[label]);
     }
     return data;
