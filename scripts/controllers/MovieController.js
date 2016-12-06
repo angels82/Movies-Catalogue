@@ -3,9 +3,9 @@
 // then handles the result from the request
 
 class MovieController {
-    constructor(movieModel, commentController, homeView, listMoviesView, createMovieView, editMovieView, movieDetailsView, renderer) {
+    constructor(movieModel, commentModel, homeView, listMoviesView, createMovieView, editMovieView, movieDetailsView, renderer) {
         this.movieModel = movieModel;
-        this.commentController = commentController;
+        this.commentModel = commentModel;
         this.homeView = homeView;
         this.listMoviesView = listMoviesView;
         this.createMovieView = createMovieView;
@@ -48,16 +48,13 @@ class MovieController {
 
     showMovieDetails(movieId) {
         let _self = this;
-        let movie = this.movieModel.getMovie(movieId);
-        this.movieModel.getMovie(movieId)
-                .then(function (movie) {
-                    _self.movieDetailsView.renderView(movie,comments);
-                })
-                .catch(function (errorMessage) {
-                    _self.renderer.handleError(errorMessage);
-                });
-        let comments = this.commentController.getComments(movieId);
-        // this.movieDetailsView.renderView(movie, comments);
+        let p1 = this.movieModel.getMovie(movieId);
+        let p2 = this.commentModel.getComments(movieId);
+
+        Promise.all([p1,p2]).then(function([movie,comments]){
+            _self.movieDetailsView.renderView(movie,comments);
+
+        })
     }
 
 
