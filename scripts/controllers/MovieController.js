@@ -14,24 +14,12 @@ class MovieController {
         this.renderer = renderer;
     }
 
-    getMovie(movieId) {
-        let _self = this;
-
-        this.movieModel.getMovie(movieId)
-            .then(function (movie) {
-                _self.listMoviesView.renderView(movies);
-            })
-            .catch(function (errorMessage) {
-                _self.renderer.handleError(errorMessage);
-            });
-    }
-
     listMovies() {
         let _self = this;
 
         this.movieModel.getMovies()
             .then(function (movies) {
-                _self.listMoviesView.renderView(movies,'Movies');
+                _self.listMoviesView.renderView(movies, _self, 'Movies');
                 _self.renderer.renderInfo('Movies loaded.');
             })
             .catch(function (errorMessage) {
@@ -44,9 +32,8 @@ class MovieController {
 
         this.movieModel.getMovies()
             .then(function (movies) {
-                console.log(movies)
                 let myMovies = movies.filter((movie) => movie._acl.creator == sessionStorage.getItem('userId'));
-                _self.listMoviesView.renderView(myMovies,'My Movies');
+                _self.listMoviesView.renderView(myMovies, _self,'My Movies');
                 _self.renderer.renderInfo('My Movies loaded.');
             })
             .catch(function (errorMessage) {
@@ -54,25 +41,23 @@ class MovieController {
             });
     }
 
-    // listMyMovies() {
-    //     let userId = sessionStorage.getItem('userId');
-    //     let myMovies = this.getMyMovies(userId);
-    //     this.listMoviesView.renderView(myMovies,'Movies');
-    // }
-
-    // createMovie() {
-    //     // this.createMovieView.renderView();
-    // }
-
     editMovie(movieId) {
         let movie = this.getMovie(movieId);
         this.editMovieView.renderView(movie);
     }
 
     showMovieDetails(movieId) {
-        let movie = this.getMovie(movieId);
+        let _self = this;
+        let movie = this.movieModel.getMovie(movieId);
+        this.movieModel.getMovie(movieId)
+                .then(function (movie) {
+                    _self.movieDetailsView.renderView(movie,comments);
+                })
+                .catch(function (errorMessage) {
+                    _self.renderer.handleError(errorMessage);
+                });
         let comments = this.commentController.getComments(movieId);
-        this.movieDetailsView.renderView(movie, comments);
+        // this.movieDetailsView.renderView(movie, comments);
     }
 
 
