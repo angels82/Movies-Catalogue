@@ -51,7 +51,7 @@ class ListMoviesView {
                     .append($('<button>')
                         .attr('id','buttonEdit')
                         .text("Edit")
-                        .click(movieController.editMovie.bind(movieController,movie._id)))
+                        .click(movieController.loadMovieForEdit.bind(movieController,movie._id)))
                     .append(' ')
                     .append($('<button>')
                         .attr('id','buttonDelete')

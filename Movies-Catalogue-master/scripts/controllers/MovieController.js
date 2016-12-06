@@ -49,8 +49,11 @@ class MovieController {
         })
     }
 
-    loadMovieforEdit(){
-        
+    loadMovieForEdit(movieId){
+        let _self = this;
+        this.movieModel.getMovie(movieId).then(function(movie){
+            _self.editMovieView.renderView(movie, _self);
+        })
     }
 
     showMovieDetails(movieId) {
