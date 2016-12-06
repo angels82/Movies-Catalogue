@@ -10,9 +10,6 @@ class ListMoviesView {
     }
 
     renderView(movies, movieController, viewTitle) {
-        // let editAction = movieController.editMovie;
-        // let deleteAction  = movieController.deleteMovie;
-        // let detailsAction = movieController.showMovieDetails;
 
         let view = $(`
            <div id="viewMovies">
@@ -59,11 +56,6 @@ class ListMoviesView {
                         .attr('id','buttonDelete')
                         .text("[Delete]")
                         .click(movieController.deleteMovie.bind(movieController,movie._id)));
-                    // `
-                    //     <a href="#">[Edit]</a>
-                    //     <a href="#">[Delete]</a>
-                    // `
-                // ))
             }
 
             return row;

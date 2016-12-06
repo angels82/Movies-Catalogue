@@ -20,7 +20,7 @@ class MovieController {
         this.movieModel.getMovies()
             .then(function (movies) {
                 _self.listMoviesView.renderView(movies, _self, 'Movies');
-                _self.renderer.renderInfo('Movies loaded.');
+                // _self.renderer.renderInfo('Movies loaded.');
             })
             .catch(function (errorMessage) {
                 _self.renderer.handleError(errorMessage);
@@ -34,7 +34,7 @@ class MovieController {
             .then(function (movies) {
                 let myMovies = movies.filter((movie) => movie._acl.creator == sessionStorage.getItem('userId'));
                 _self.listMoviesView.renderView(myMovies, _self,'My Movies');
-                _self.renderer.renderInfo('My Movies loaded.');
+                // _self.renderer.renderInfo('My Movies loaded.');
             })
             .catch(function (errorMessage) {
                 _self.renderer.handleError(errorMessage);
@@ -54,7 +54,9 @@ class MovieController {
         Promise.all([p1,p2]).then(function([movie,comments]){
             _self.movieDetailsView.renderView(movie,comments);
 
-        })
+        }).catch(function (errorMessage) {
+            _self.renderer.handleError(errorMessage);
+        });
     }
 
 
@@ -66,7 +68,7 @@ class MovieController {
         this.movieModel.createMovie(movie)
             .then(function () {
                 _self.renderer.renderInfo('Movie created.');
-                _self.listMoviesView.renderView();
+                _self.listMyMovies();
             })
             .catch(function (errorMessage) {
                 _self.renderer.handleError(errorMessage);
@@ -78,6 +80,12 @@ class MovieController {
     }
 
     deleteMovie(movieId) {
+        let _self = this;
+        this.movieModel.deleteMovie(movieId).then(function(){
+            _self.listMyMovies();
+            _self.renderer.renderInfo('Movie deleted.');
+        })
+
 
     }
 }
