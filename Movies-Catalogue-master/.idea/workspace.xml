@@ -21,7 +21,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MovieDetailsView.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MovieDetailsView.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/views/MovieDetailsView.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="220">
@@ -74,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="movie-catalogue.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="movie-catalogue.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/styles/movie-catalogue.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="127" column="23" lean-forward="false" selection-start-line="127" selection-start-column="23" selection-end-line="127" selection-end-column="23" />
+            <state relative-caret-position="303">
+              <caret line="90" column="59" lean-forward="false" selection-start-line="90" selection-start-column="59" selection-end-line="90" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -189,8 +189,8 @@
         <option value="$PROJECT_DIR$/scripts/views/RegisterView.js" />
         <option value="$PROJECT_DIR$/scripts/utilities/renderer.js" />
         <option value="$PROJECT_DIR$/scripts/views/ListMoviesView.js" />
-        <option value="$PROJECT_DIR$/styles/movie-catalogue.css" />
         <option value="$PROJECT_DIR$/scripts/views/MovieDetailsView.js" />
+        <option value="$PROJECT_DIR$/styles/movie-catalogue.css" />
       </list>
     </option>
   </component>
@@ -442,12 +442,12 @@
       <option name="presentableId" value="Default" />
       <updated>1480952668221</updated>
       <workItem from="1480952669853" duration="13003000" />
-      <workItem from="1481027068131" duration="16880000" />
+      <workItem from="1481027068131" duration="18226000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29883000" />
+    <option name="totallyTimeSpent" value="31229000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -825,14 +825,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/movie-catalogue.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="127" column="23" lean-forward="false" selection-start-line="127" selection-start-column="23" selection-end-line="127" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/views/MovieDetailsView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -840,6 +832,14 @@
           <folding>
             <marker date="1481043805867" expanded="true" signature="271:891" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/movie-catalogue.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="90" column="59" lean-forward="false" selection-start-line="90" selection-start-column="59" selection-end-line="90" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>

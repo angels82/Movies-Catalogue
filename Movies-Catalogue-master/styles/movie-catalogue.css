@@ -38,7 +38,7 @@ section h1 {
 }
 
 table th {
-    background: #DDD;
+    background: #339933;
     padding: 10px;
 }
 
@@ -48,7 +48,7 @@ table td {
 }
 
 td.movieActions {
-    display: inline-block;
+    /*display: inline-block;*/
     white-space: nowrap;
 }
 
@@ -88,7 +88,7 @@ footer {
     text-align: center;
 }
 
-#viewLogin, #viewRegister {
+#viewLogin, #viewRegister, #viewCreateMovie, #viewEditMovie {
     margin: auto;
     padding-bottom: 10px;
     border-radius: 8px;
@@ -127,8 +127,4 @@ footer {
 .commentText {
     background: #EEEEEE;
     padding-left: 5px;
-}
-
-th {
-    background: #339933;
 }
