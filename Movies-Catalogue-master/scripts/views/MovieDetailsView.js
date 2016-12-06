@@ -32,21 +32,20 @@ class MovieDetailsView {
                         .append($('<div class="text">').text(comment.text));
                 if(comment.author == sessionStorage.getItem('username')) {
                     commentLi.append($('<div>')
-                        .append($('<button>Edit</button>').click(movieController.showEditCommentView.bind(movieController, comment._id)))
-                        .append($('<button>Delete</button>').click(movieController.deleteComment.bind(movieController, comment._id))));
+                        .append($('<button>Edit</button>').click(movieController.showEditCommentView.bind(movieController, movie, comment)))
+                        .append($('<button>Delete</button>').click(movieController.showDeleteCommentView.bind(movieController, movie, comment))));
                 }
 
                 view.find('#comments .comment-list')
                     .append(commentLi);
             }
-
-            view.append($('<div>')
-                .append($('<button id="buttonAddComment">Add Comment</button>')
-                    .click(movieController.showCommentView.bind(movieController, movie))));
-
         } else {
             view.find('#comments').append($('<div>').text('No comments'))
         }
+
+        view.append($('<div>')
+            .append($('<button id="buttonAddComment">Add Comment</button>')
+                .click(movieController.showCommentView.bind(movieController, movie))));
 
         this.renderer.renderView(view);
     }

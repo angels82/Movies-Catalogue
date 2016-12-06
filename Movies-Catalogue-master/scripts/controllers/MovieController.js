@@ -3,7 +3,7 @@
 // then handles the result from the request
 
 class MovieController {
-    constructor(movieModel, commentModel, homeView, listMoviesView, createMovieView, editMovieView, movieDetailsView, addCommentView, renderer) {
+    constructor(movieModel, commentModel, homeView, listMoviesView, createMovieView, editMovieView, movieDetailsView, addCommentView, editCommentView, deleteCommentView, renderer) {
         this.movieModel = movieModel;
         this.commentModel = commentModel;
         this.homeView = homeView;
@@ -12,6 +12,8 @@ class MovieController {
         this.editMovieView = editMovieView;
         this.movieDetailsView = movieDetailsView;
         this.addCommentView = addCommentView;
+        this.editCommentView = editCommentView;
+        this.deleteCommentView = deleteCommentView;
         this.renderer = renderer;
     }
 
@@ -21,11 +23,9 @@ class MovieController {
         this.movieModel.getMovies()
             .then(function (movies) {
                 _self.listMoviesView.renderView(movies, _self, 'Movies');
-                // _self.renderer.renderInfo('Movies loaded.');
+                _self.renderer.renderInfo('Movies loaded.');
             })
-            .catch(function (errorMessage) {
-                _self.renderer.handleError(errorMessage);
-            });
+            .catch((errorMessage) => _self.handleError(errorMessage));
     }
 
     listMyMovies() {
@@ -35,11 +35,9 @@ class MovieController {
             .then(function (movies) {
                 let myMovies = movies.filter((movie) => movie._acl.creator == sessionStorage.getItem('userId'));
                 _self.listMoviesView.renderView(myMovies, _self,'My Movies');
-                // _self.renderer.renderInfo('My Movies loaded.');
+                _self.renderer.renderInfo('Movies loaded.');
             })
-            .catch(function (errorMessage) {
-                _self.renderer.handleError(errorMessage);
-            });
+            .catch((errorMessage) => _self.handleError(errorMessage));
     }
 
     editMovie(movieId) {
@@ -54,10 +52,8 @@ class MovieController {
 
         Promise.all([p1,p2]).then(function([movie,comments]){
             _self.movieDetailsView.renderView(movie,comments, _self);
-
-        }).catch(function (errorMessage) {
-            _self.renderer.handleError(errorMessage);
-        });
+            _self.renderer.renderInfo('Movie details loaded.');
+        }).catch((errorMessage) => _self.handleError(errorMessage));
     }
 
 
@@ -70,25 +66,16 @@ class MovieController {
                 _self.renderer.renderInfo('Movie created.');
                 _self.listMyMovies();
             })
-            .catch(function (errorMessage) {
-                _self.renderer.handleError(errorMessage);
-            });
+            .catch((errorMessage) => _self.handleError(errorMessage));
     }
 
     deleteMovie(movieId) {
         let _self = this;
-        this.movieModel.deleteMovie(movieId).then(function(){
-            _self.listMyMovies();
-            _self.renderer.renderInfo('Movie deleted.');
-        })
-
-
-    }
-
-    showEditCommentView(commentId) {
-    }
-
-    deleteComment(commentId) {
+        this.movieModel.deleteMovie(movieId)
+            .then(function(){
+                _self.renderer.renderInfo('Movie deleted.');
+                _self.listMyMovies();
+            }).catch((errorMessage) => _self.handleError(errorMessage));
     }
 
     showCommentView(movie) {
@@ -96,9 +83,49 @@ class MovieController {
     }
 
     addComment() {
+        let _self = this;
         let data = this.addCommentView.submitData();
 
-        this.commentModel.createComment(data);
-        this.showMovieDetails(data.movieId);
+        this.commentModel.createComment(data)
+            .then(function () {
+                _self.renderer.renderInfo('Comment created.');
+                _self.showMovieDetails(data.movieId);
+            }).catch((errorMessage) => _self.handleError(errorMessage));
+
+    }
+
+    showEditCommentView(movie, comment) {
+        this.editCommentView.renderView(this, movie, comment);
+    }
+
+    editComment() {
+        let _self = this;
+        let allData = this.editCommentView.submitData();
+        let commentId = allData.commentId;
+        let data = allData.data;
+
+        this.commentModel.updateComment(commentId, data)
+            .then(function () {
+                _self.renderer.renderInfo('Comment edited.');
+                _self.showMovieDetails(data.movieId);
+            }).catch((errorMessage) => _self.handleError(errorMessage));
+    }
+
+    showDeleteCommentView(movie, comment) {
+        this.deleteCommentView.renderView(this, movie, comment);
+    }
+
+    deleteComment() {
+        let _self = this;
+        let data = this.deleteCommentView.submitData();
+
+        this.commentModel.deleteComment(data.commentId).then(function () {
+            _self.renderer.renderInfo('Comment deleted.');
+            _self.showMovieDetails(data.movieId);
+        }).catch((errorMessage) => _self.handleError(errorMessage));
+    }
+
+    handleError(errorMessage) {
+        this.renderer.renderError(errorMessage);
     }
 }

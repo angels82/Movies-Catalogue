@@ -26,11 +26,7 @@ class UserController {
             _self.renderer.renderInfo('Login successful.');
 
             _self.movieController.listMovies();
-        }).catch(function (errorMessage) {
-            _self.handleError(errorMessage);
-        });
-
-
+        }).catch((errorMessage) => _self.handleError(errorMessage));
     }
 
     registerUser() {
@@ -45,9 +41,7 @@ class UserController {
             _self.renderer.renderInfo('Registration successful.');
 
             _self.listMoviesView.renderView();
-        }).catch(function (errorMessage) {
-            _self.handleError(errorMessage);
-        });
+        }).catch((errorMessage) => _self.handleError(errorMessage));
     }
 
     logOutUser() {
@@ -57,7 +51,7 @@ class UserController {
             _self.renderer.renderInfo('Logout successful.');
 
             _self.homeView.renderView();
-        }).catch();
+        }).catch((errorMessage) => _self.handleError(errorMessage));
     }
 
     handleError(errorMessage) {

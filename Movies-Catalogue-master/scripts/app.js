@@ -15,15 +15,16 @@
     let editMovieView = new EditMovieView(renderer);
     let movieDetailsView = new MovieDetailsView(renderer);
     let addCommentView = new AddCommentView(renderer);
+    let editCommentView = new EditCommentView(renderer);
+    let deleteCommentView = new DeleteCommentView(renderer);
 
     let userModel = new UserModel(requester, authenticationService);
     let movieModel = new MovieModel(requester, authenticationService);
     let commentModel = new CommentModel(requester, authenticationService);
 
     let movieController =
-        new MovieController(movieModel, commentModel, homeView, listMoviesView, createMovieView, editMovieView, movieDetailsView, addCommentView, renderer);
+        new MovieController(movieModel, commentModel, homeView, listMoviesView, createMovieView, editMovieView, movieDetailsView, addCommentView, editCommentView, deleteCommentView, renderer);
     let userController = new UserController(userModel, movieController, loginView, registerView, listMoviesView, homeView, renderer);
-    let commentController = new CommentsController(commentModel, listMoviesView, movieDetailsView);
 
     //sessionStorage.clear();
 

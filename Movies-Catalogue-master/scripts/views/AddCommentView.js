@@ -24,8 +24,6 @@ class AddCommentView {
             movieController.addComment();
         });
 
-        view.find('h1').text(`Add comment for "${movie.title}"`);
-
         this.renderer.renderView(view);
     }
 
