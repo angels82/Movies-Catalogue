@@ -33,17 +33,28 @@ class ListMoviesView {
         this.renderer.renderView(view);
 
         function createMovieRow(movie){
-            return $(`
+            let row =  $(`
                 <tr>
                     <td>${movie.title}</td>
                     <td>${movie.director}</td>
                     <td>${movie.year}</td>
                     <td>${movie.description}</td>
-                    <td id="actions">
-                        <a href="#">[Details]</a>     
+                    <td class="movieActions">
+                        <a href="#">[Details]</a>
                     </td>
                 </tr>
             `);
+
+            if (movie._acl.creator == sessionStorage.getItem('userId')){
+                row.find('.movieActions').append($(
+                    `
+                        <a href="#">[Edit]</a> 
+                        <a href="#">[Delete]</a> 
+                    `
+                ))
+            }
+
+            return row;
         }
     }
 }

@@ -25,7 +25,7 @@ class UserController {
             sessionStorage.setItem('username', data.username);
             _self.renderer.renderInfo('Login successful.');
 
-            _self.movieController.getMovies();
+            _self.movieController.listMovies();
         }).catch(function (errorMessage) {
             _self.handleError(errorMessage);
         });
