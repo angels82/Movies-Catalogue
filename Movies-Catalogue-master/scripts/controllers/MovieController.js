@@ -72,6 +72,8 @@ class MovieController {
         let _self = this;
         let movie = this.createMovieView.submitData();
 
+        if (movie.title == ''  || movie.director == '' || movie.year == '') return;
+
         this.movieModel.createMovie(movie)
             .then(function () {
                 _self.renderer.renderInfo('Movie created.');
