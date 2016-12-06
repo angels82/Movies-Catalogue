@@ -1,5 +1,5 @@
 #menu {
-    background: #DDD;
+    background: #006622;
     text-align: center;
     padding: 5px;
     line-height: 1.5;
@@ -13,13 +13,18 @@
 }
 
 #menu a {
+    color: #EEEEEE;
     text-decoration: none;
     padding: 5px 10px;
     border-radius: 5px;
 }
 
 #menu a:hover {
-    background: #BBB;
+    background: #00b33c;
+}
+
+#loggedInUser {
+    color: #EEEEEE;
 }
 
 main section {
@@ -70,21 +75,60 @@ td.movieActions {
 
 
 footer {
-    background: #DDD;
+    background: #006622;
+    color: #EEEEEE;
     padding: 5px 10px;
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: 0.8em;
     text-align: center;
     border-radius: 3px;
 }
 
+#viewHome {
+    text-align: center;
+}
+
+#viewLogin, #viewRegister {
+    margin: auto;
+    padding-bottom: 10px;
+    border-radius: 8px;
+    width: 30%;
+    text-align: center;
+    background: #339933;
+}
+
+.movieDetailsView {
+    padding: 5px;
+}
+
+.movieViewHeader {
+    font-size: 1.2em;
+    padding-top: 5px;
+}
+
+.movieViewData {
+    padding-left: 5px;
+}
+
 .comment-list>li {
     list-style: none;
-    margin-left: -30px;
+    margin-left: -40px;
+    margin-right: 2px;
     margin-bottom: 5px;
 }
 
-.author {
-    background: #c1d9ff;
+.commentAuthor {
+    background: #00b33c;
+    color: #EEEEEE;
+    padding: 2px;
     border-radius: 3px;
+}
+
+.commentText {
+    background: #EEEEEE;
+    padding-left: 5px;
+}
+
+th {
+    background: #339933;
 }

@@ -17,7 +17,8 @@ class MovieDetailsView {
                 <div class="movieViewHeader">Year:</div>
                 <div class="movieViewData">${movie.year}</div>
                 <div class="movieViewHeader">Description:</div>
-                <div class="movieViewHeader">${movie.description}</div>
+                <div class="movieViewData">${movie.description}</div>
+                <br/>
                 <div class="movieViewHeader" id="comments">Comments:</div>
             </div>
             `
@@ -28,12 +29,13 @@ class MovieDetailsView {
             view.find('#comments').append($('<ul>').addClass("comment-list"));
             for (let comment of comments){
                 let commentLi = $('<li>')
-                        .append($('<div class="author">').text(comment.author))
-                        .append($('<div class="text">').text(comment.text));
+                        .append($('<div class="commentAuthor">').text(comment.author + ':'))
+                        .append($('<div class="commentText">').text('"' + comment.text + '"'));
                 if(comment.author == sessionStorage.getItem('username')) {
-                    commentLi.append($('<div>')
-                        .append($('<button>Edit</button>').click(movieController.showEditCommentView.bind(movieController, movie, comment)))
-                        .append($('<button>Delete</button>').click(movieController.showDeleteCommentView.bind(movieController, movie, comment))));
+                    commentLi
+                        .append($('<button id="buttonEditComment">Edit</button>').click(movieController.showEditCommentView.bind(movieController, movie, comment)))
+                        .append(' ')
+                        .append($('<button id="buttonDeleteComment">Delete</button>').click(movieController.showDeleteCommentView.bind(movieController, movie, comment)));
                 }
 
                 view.find('#comments .comment-list')

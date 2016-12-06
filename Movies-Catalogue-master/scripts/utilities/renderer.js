@@ -25,7 +25,7 @@ class Renderer {
         $('#loggedInUser').empty();
 
         if(this.authService.isLoggedIn())
-            $('#loggedInUser').text('Welcome, ' + this.authService.getUsername());
+            $('#loggedInUser').text('Welcome, ' + this.authService.getUsername() + '!');
     }
 
     renderView(element) {

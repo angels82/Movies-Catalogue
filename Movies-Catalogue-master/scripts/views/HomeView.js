@@ -6,7 +6,7 @@ class HomeView {
     }
 
     renderView() {
-        let view = $('<div><h1>Welcome</h1>Welcome to our movie catalogue.</div>');
+        let view = $('<div id="viewHome"><h1>Welcome</h1>Welcome to our movie catalogue.</div>');
 
         this.renderer.renderView(view);
     }

@@ -40,7 +40,7 @@ class ListMoviesView {
                     <td>${movie.year}</td>
                     <td>${movie.description}</td>
                     <td class="movieActions">                   
-                        <a href="#" id="buttonDetails">[Details]</a>
+                        <button id="buttonDetails">Details</button>
                     </td>
                 </tr>
             `);
@@ -48,13 +48,14 @@ class ListMoviesView {
 
             if (movie._acl.creator == sessionStorage.getItem('userId')){
                 row.find('.movieActions')
-                    .append($('<a href="#">')
+                    .append($('<button>')
                         .attr('id','buttonEdit')
-                        .text("[Edit]")
+                        .text("Edit")
                         .click(movieController.editMovie.bind(movieController,movie._id)))
-                    .append($('<a href="#">')
+                    .append(' ')
+                    .append($('<button>')
                         .attr('id','buttonDelete')
-                        .text("[Delete]")
+                        .text("Delete")
                         .click(movieController.deleteMovie.bind(movieController,movie._id)));
             }
 

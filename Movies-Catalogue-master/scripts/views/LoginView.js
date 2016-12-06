@@ -15,10 +15,12 @@
                     <div>
                         <input type="text" name="username" required />
                     </div>
+                    <br/>
                     <div>Password</div>
                     <div>
                         <input type="password" name="password" required />
                     </div>
+                    <br/>
                     <div>
                         <input type="submit" id="buttonLoginUser" value="Login"/>
                     </div>
