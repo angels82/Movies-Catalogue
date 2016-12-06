@@ -26,12 +26,12 @@ class MovieController {
             });
     }
 
-    getMovies() {
+    listMovies() {
         let _self = this;
 
         this.movieModel.getMovies()
             .then(function (movies) {
-                _self.listMoviesView.renderView(movies);
+                _self.listMoviesView.renderView(movies,'Movies');
                 _self.renderer.renderInfo('Movies loaded.');
             })
             .catch(function (errorMessage) {
@@ -39,13 +39,13 @@ class MovieController {
             });
     }
 
-    getMyMovies(userId) {
+    listMyMovies(userId) {
         let _self = this;
 
         this.movieModel.getMovies()
             .then(function (movies) {
-                let myMovies = movies.filter((movie) => movie._acl.creator == sessionStorage.getItem('userID'));
-                _self.listMoviesView.renderView(movies);
+                let myMovies = movies.filter((movie) => movie._acl.creator == userId);
+                _self.listMoviesView.renderView(myMovies,'My Movies');
                 _self.renderer.renderInfo('Movies loaded.');
             })
             .catch(function (errorMessage) {
@@ -53,11 +53,11 @@ class MovieController {
             });
     }
 
-    listMyMovies() {
-        let userId = sessionStorage.getItem('userId');
-        let myMovies = this.getMyMovies(userId);
-        this.listMoviesView.renderView(myMovies);
-    }
+    // listMyMovies() {
+    //     let userId = sessionStorage.getItem('userId');
+    //     let myMovies = this.getMyMovies(userId);
+    //     this.listMoviesView.renderView(myMovies,'Movies');
+    // }
 
     // createMovie() {
     //     // this.createMovieView.renderView();
