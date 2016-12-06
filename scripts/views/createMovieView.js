@@ -1,8 +1,6 @@
 // Renders the Create Movie View through the passed in renderer
 // Sends movie data to moviesController by submitData()
 
-//TODO: attach submit function & test
-
 class CreateModelView {
     constructor(renderer) {
         this.renderer = renderer;
@@ -35,6 +33,10 @@ class CreateModelView {
                 </form>
             </div>
         `);
+
+        view.find('form').submit(function(e){
+            e.preventDefault();
+        });
 
         view.find('#buttonCreateMovie').click(eventHandler);
 

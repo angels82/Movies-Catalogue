@@ -8,7 +8,7 @@ class ListMoviesView {
     }
 
     renderView(movies) {
-        let view = $('<div>');
+        let view = $('<div>').text("Movies...");
         alert(movies);
         this.renderer.renderView(view);
     }

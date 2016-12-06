@@ -59,9 +59,9 @@ class MovieController {
         this.listMoviesView.renderView(myMovies);
     }
 
-    createMovie() {
-        this.createMovieView.renderView();
-    }
+    // createMovie() {
+    //     // this.createMovieView.renderView();
+    // }
 
     editMovie(movieId) {
         let movie = this.getMovie(movieId);
@@ -76,13 +76,14 @@ class MovieController {
 
 
 
-    postMovie() {
+    createMovie() {
         let _self = this;
         let movie = this.createMovieView.submitData();
 
         this.movieModel.createMovie(movie)
             .then(function () {
                 _self.renderer.renderInfo('Movie created.');
+                _self.listMoviesView.renderView();
             })
             .catch(function (errorMessage) {
                 _self.renderer.handleError(errorMessage);

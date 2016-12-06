@@ -38,7 +38,8 @@
     const loggedUserLinks = [
         $('<a href="#" id="linkListMovies">List Movies</a>').click(movieController.getMovies.bind(movieController)).hide(),
         $('<a href="#" id="linkListMyMovies">My Movies</a>').click(movieController.listMyMovies.bind(movieController)).hide(),
-        $('<a href="#" id="linkCreateMovie">Create Movie</a>').click(movieController.createMovie.bind(movieController)).hide(),
+        $('<a href="#" id="linkCreateMovie">Create Movie</a>')
+            .click(createMovieView.renderView.bind(createMovieView,movieController.createMovie.bind(movieController))).hide(),
         $('<a href="#" id="linkLogout">Logout</a>').click(userController.logOutUser.bind(userController)).hide()
     ];
     renderer.setLinks(notLoggedUserLinks, loggedUserLinks);
