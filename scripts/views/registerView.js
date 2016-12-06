@@ -6,7 +6,7 @@ class RegisterView {
         this.renderer = renderer;
     }
 
-    renderView(userController) {
+    renderView(eventHandler) {
         let view = $(`
             <div id="viewRegister">
                 <h1>Please register here</h1>
@@ -31,7 +31,7 @@ class RegisterView {
         });
 
         view.find('#buttonRegisterUser')
-            .click(userController.registerUser.bind(userController));
+            .click(eventHandler);
 
 
         this.renderer.renderView(view);

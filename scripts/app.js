@@ -29,10 +29,10 @@
             .click(homeView.renderView.bind(homeView)),
 
         $('<a href="#" id="linkLogin">Login</a>')
-            .click(loginView.renderView.bind(loginView,userController)),
+            .click(loginView.renderView.bind(loginView,userController.logInUser.bind(userController))),
 
         $('<a href="#" id="linkRegister">Register</a>')
-            .click(registerView.renderView.bind(registerView,userController))
+            .click(registerView.renderView.bind(registerView,userController.registerUser.bind(userController)))
     ];
 
     const loggedUserLinks = [

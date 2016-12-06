@@ -6,7 +6,7 @@
         this.renderer = renderer;
     }
 
-    renderView(userController) {
+    renderView(eventHandler) {
         let view = $(`
             <div id="viewLogin">
                 <h1>Please login</h1>
@@ -30,7 +30,7 @@
         });
 
         view.find('#buttonLoginUser')
-            .click(userController.logInUser.bind(userController));
+            .click(eventHandler);
 
         this.renderer.renderView(view);
     }
