@@ -3,7 +3,7 @@
 // then handles the result from the request
 
 class MovieController {
-    constructor(movieModel, commentModel, homeView, listMoviesView, createMovieView, editMovieView, movieDetailsView, renderer) {
+    constructor(movieModel, commentModel, homeView, listMoviesView, createMovieView, editMovieView, movieDetailsView, addCommentView, renderer) {
         this.movieModel = movieModel;
         this.commentModel = commentModel;
         this.homeView = homeView;
@@ -11,6 +11,7 @@ class MovieController {
         this.createMovieView = createMovieView;
         this.editMovieView = editMovieView;
         this.movieDetailsView = movieDetailsView;
+        this.addCommentView = addCommentView;
         this.renderer = renderer;
     }
 
@@ -52,13 +53,12 @@ class MovieController {
         let p2 = this.commentModel.getComments(movieId);
 
         Promise.all([p1,p2]).then(function([movie,comments]){
-            _self.movieDetailsView.renderView(movie,comments);
+            _self.movieDetailsView.renderView(movie,comments, _self);
 
         }).catch(function (errorMessage) {
             _self.renderer.handleError(errorMessage);
         });
     }
-
 
 
     createMovie() {
@@ -75,10 +75,6 @@ class MovieController {
             });
     }
 
-    putMovie(movieId) {
-
-    }
-
     deleteMovie(movieId) {
         let _self = this;
         this.movieModel.deleteMovie(movieId).then(function(){
@@ -87,5 +83,22 @@ class MovieController {
         })
 
 
+    }
+
+    showEditCommentView(commentId) {
+    }
+
+    deleteComment(commentId) {
+    }
+
+    showCommentView(movie) {
+        this.addCommentView.renderView(this, movie);
+    }
+
+    addComment() {
+        let data = this.addCommentView.submitData();
+
+        this.commentModel.createComment(data);
+        this.showMovieDetails(data.movieId);
     }
 }

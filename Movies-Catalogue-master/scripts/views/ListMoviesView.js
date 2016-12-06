@@ -39,7 +39,7 @@ class ListMoviesView {
                     <td>${movie.director}</td>
                     <td>${movie.year}</td>
                     <td>${movie.description}</td>
-                    <td class="movieActions">
+                    <td class="movieActions">                   
                         <a href="#" id="buttonDetails">[Details]</a>
                     </td>
                 </tr>

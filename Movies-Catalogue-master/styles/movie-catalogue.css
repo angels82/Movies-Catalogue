@@ -76,3 +76,14 @@ footer {
     text-align: center;
     border-radius: 3px;
 }
+
+.comment-list>li {
+    list-style: none;
+    margin-left: -30px;
+    margin-bottom: 5px;
+}
+
+.author {
+    background: #c1d9ff;
+    border-radius: 3px;
+}

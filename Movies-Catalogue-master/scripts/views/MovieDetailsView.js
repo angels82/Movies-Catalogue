@@ -6,7 +6,7 @@ class MovieDetailsView {
         this.renderer = rendrer;
     }
 
-    renderView(movie, comments) {
+    renderView(movie, comments, movieController) {
         let view = $(
             `
             <div movieId=${movie._id} class="movieDetailsView">
@@ -24,13 +24,25 @@ class MovieDetailsView {
         );
 
         if (comments.length>0){
-            console.log(comments.length)
+            //console.log(comments.length);
             view.find('#comments').append($('<ul>').addClass("comment-list"));
             for (let comment of comments){
+                let commentLi = $('<li>')
+                        .append($('<div class="author">').text(comment.author))
+                        .append($('<div class="text">').text(comment.text));
+                if(comment.author == sessionStorage.getItem('username')) {
+                    commentLi.append($('<div>')
+                        .append($('<button>Edit</button>').click(movieController.showEditCommentView.bind(movieController, comment._id)))
+                        .append($('<button>Delete</button>').click(movieController.deleteComment.bind(movieController, comment._id))));
+                }
+
                 view.find('#comments .comment-list')
-                    .append($('<li>')
-                        .text(comment.text));
+                    .append(commentLi);
             }
+
+            view.append($('<div>')
+                .append($('<button id="buttonAddComment">Add Comment</button>')
+                    .click(movieController.showCommentView.bind(movieController, movie))));
 
         } else {
             view.find('#comments').append($('<div>').text('No comments'))

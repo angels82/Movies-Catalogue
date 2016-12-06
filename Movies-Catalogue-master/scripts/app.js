@@ -11,18 +11,21 @@
     let loginView = new LoginView(renderer);
     let registerView = new RegisterView(renderer);
     let listMoviesView = new ListMoviesView(renderer);
-    let createMovieView = new CreateModelView(renderer);
+    let createMovieView = new CreateMovieView(renderer);
     let editMovieView = new EditMovieView(renderer);
     let movieDetailsView = new MovieDetailsView(renderer);
+    let addCommentView = new AddCommentView(renderer);
 
     let userModel = new UserModel(requester, authenticationService);
     let movieModel = new MovieModel(requester, authenticationService);
     let commentModel = new CommentModel(requester, authenticationService);
 
     let movieController =
-        new MovieController(movieModel, commentModel, homeView, listMoviesView, createMovieView, editMovieView, movieDetailsView, renderer);
+        new MovieController(movieModel, commentModel, homeView, listMoviesView, createMovieView, editMovieView, movieDetailsView, addCommentView, renderer);
     let userController = new UserController(userModel, movieController, loginView, registerView, listMoviesView, homeView, renderer);
-    let commentController = new CommentsController(commentModel);
+    let commentController = new CommentsController(commentModel, listMoviesView, movieDetailsView);
+
+    //sessionStorage.clear();
 
     const notLoggedUserLinks = [
         $('<a href="#" id="linkHome">Home</a>')
@@ -48,12 +51,7 @@
     $('#menu').append(notLoggedUserLinks);
     $('#menu').append(loggedUserLinks);
 
-    // loginView.renderView(userController);
     homeView.renderView();
 
-
-
-
-    //userController.logInUser();
 
 }());

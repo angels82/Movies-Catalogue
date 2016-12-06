@@ -1,6 +1,8 @@
 class CommentsController {
-    constructor(model) {
+    constructor(model, listMoviesView, movieDetailsView) {
         this.model = model;
+        this.listMoviesView = listMoviesView;
+        this.movieDetailsView = movieDetailsView;
     }
 
     getComments(movieId) {

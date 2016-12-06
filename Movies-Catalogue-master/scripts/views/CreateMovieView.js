@@ -1,7 +1,7 @@
 // Renders the Create Movie View through the passed in renderer
 // Sends movie data to moviesController by submitData()
 
-class CreateModelView {
+class CreateMovieView {
     constructor(renderer) {
         this.renderer = renderer;
     }

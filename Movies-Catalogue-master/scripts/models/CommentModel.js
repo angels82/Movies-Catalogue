@@ -8,8 +8,7 @@ class CommentModel {
         return this.auth.getHeaders();
     }
 
-    createComment(movieId, data) {
-        data.movieId = movieId;
+    createComment(data) {
         return this.requester.post('/comments', this.headers, data);
     }
 

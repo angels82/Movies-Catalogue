@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Catalogue</title>
+    <script src="scripts/libraries/jquery-3.1.1.min.js"></script>
+    <script src="scripts/libraries/system.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/movie-catalogue.css" />
+</head>
+<body>
+
+<header id="menu">
+
+    <span id="loggedInUser"></span>
+</header>
+
+<main>
+
+    <section id="loadingBox">Loading...</section>
+    <section id="infoBox">Info</section>
+    <section id="errorBox">Error</section>
+
+    <div id="view">
+
+
+    </div>
+</main>
+
+<footer>Movie Catalogue - Simple SPA Application</footer>
+
+<script src="scripts/controllers/CommentController.js"></script>
+<script src="scripts/controllers/MovieController.js"></script>
+<script src="scripts/controllers/UserController.js"></script>
+<script src="scripts/views/HomeView.js"></script>
+<script src="scripts/views/LoginView.js"></script>
+<script src="scripts/views/RegisterView.js"></script>
+<script src="scripts/views/ListMoviesView.js"></script>
+<script src="scripts/views/CreateMovieView.js"></script>
+<script src="scripts/views/EditMovieView.js"></script>
+<script src="scripts/views/MovieDetailsView.js"></script>
+<script src="scripts/views/AddCommentView.js"></script>
+<script src="scripts/models/CommentModel.js"></script>
+<script src="scripts/models/UserModel.js"></script>
+<script src="scripts/models/MovieModel.js"></script>
+<script src="scripts/utilities/requester.js"></script>
+<script src="scripts/utilities/renderer.js"></script>
+<script src="scripts/services/authentication.js"></script>
+
+<script src="scripts/app.js"></script>
+
+</body>
+</html>
