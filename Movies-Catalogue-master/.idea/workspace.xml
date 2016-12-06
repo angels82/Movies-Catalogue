@@ -33,18 +33,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MovieController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/controllers/MovieController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="109" column="16" lean-forward="false" selection-start-line="109" selection-start-column="16" selection-end-line="109" selection-end-column="16" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ListMoviesView.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/views/ListMoviesView.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -52,11 +40,23 @@
               <caret line="57" column="29" lean-forward="false" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1481043151290" expanded="true" signature="405:784" ph="..." />
-                <marker date="1481043151290" expanded="true" signature="479:765" ph="..." />
-                <marker date="1481043151290" expanded="true" signature="504:735" ph="..." />
-                <marker date="1481043151290" expanded="true" signature="1115:1480" ph="..." />
-                <marker date="1481043151290" expanded="true" signature="1345:1458" ph="..." />
+                <marker date="1481051421844" expanded="true" signature="405:784" ph="..." />
+                <marker date="1481051421844" expanded="true" signature="479:765" ph="..." />
+                <marker date="1481051421844" expanded="true" signature="504:735" ph="..." />
+                <marker date="1481051421844" expanded="true" signature="1115:1480" ph="..." />
+                <marker date="1481051421844" expanded="true" signature="1345:1458" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/UserController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="47" column="47" lean-forward="false" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,12 +74,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="movie-catalogue.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MovieController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/MovieController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="356">
+              <caret line="102" column="9" lean-forward="false" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="movie-catalogue.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/styles/movie-catalogue.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="90" column="59" lean-forward="false" selection-start-line="90" selection-start-column="59" selection-end-line="90" selection-end-column="59" />
+            <state relative-caret-position="269">
+              <caret line="95" column="12" lean-forward="false" selection-start-line="95" selection-start-column="12" selection-end-line="95" selection-end-column="12" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditCommentView.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/views/EditCommentView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="431">
+              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding>
+                <marker date="1481036877732" expanded="true" signature="202:787" ph="..." />
+                <marker date="1481036877732" expanded="true" signature="305:768" ph="..." />
+                <marker date="1481036877732" expanded="true" signature="483:548" ph="..." />
+                <marker date="1481036877732" expanded="true" signature="483:600" ph="..." />
+                <marker date="1481036877732" expanded="true" signature="626:744" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,7 +125,7 @@
       <file leaf-file-name="LoginView.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/views/LoginView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="119">
               <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -114,7 +142,7 @@
       <file leaf-file-name="RegisterView.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/views/RegisterView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="102">
               <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -124,28 +152,6 @@
                 <marker date="1481042109232" expanded="true" signature="609:711" ph="..." />
                 <marker date="1481042109232" expanded="true" signature="763:878" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditMovieView.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/views/EditMovieView.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomeView.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/views/HomeView.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="39" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="39" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -182,15 +188,15 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/scripts/app.js" />
         <option value="$PROJECT_DIR$/scripts/views/DeleteCommentView.js" />
-        <option value="$PROJECT_DIR$/scripts/controllers/UserController.js" />
-        <option value="$PROJECT_DIR$/scripts/controllers/MovieController.js" />
         <option value="$PROJECT_DIR$/scripts/views/HomeView.js" />
         <option value="$PROJECT_DIR$/scripts/views/LoginView.js" />
         <option value="$PROJECT_DIR$/scripts/views/RegisterView.js" />
         <option value="$PROJECT_DIR$/scripts/utilities/renderer.js" />
         <option value="$PROJECT_DIR$/scripts/views/ListMoviesView.js" />
         <option value="$PROJECT_DIR$/scripts/views/MovieDetailsView.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/MovieController.js" />
         <option value="$PROJECT_DIR$/styles/movie-catalogue.css" />
+        <option value="$PROJECT_DIR$/scripts/controllers/UserController.js" />
       </list>
     </option>
   </component>
@@ -442,12 +448,12 @@
       <option name="presentableId" value="Default" />
       <updated>1480952668221</updated>
       <workItem from="1480952669853" duration="13003000" />
-      <workItem from="1481027068131" duration="18226000" />
+      <workItem from="1481027068131" duration="20186000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31229000" />
+    <option name="totallyTimeSpent" value="33189000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -544,11 +550,11 @@
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1481043151290" expanded="true" signature="405:784" ph="..." />
-            <marker date="1481043151290" expanded="true" signature="479:765" ph="..." />
-            <marker date="1481043151290" expanded="true" signature="504:735" ph="..." />
-            <marker date="1481043151290" expanded="true" signature="1115:1480" ph="..." />
-            <marker date="1481043151290" expanded="true" signature="1345:1458" ph="..." />
+            <marker date="1481051421844" expanded="true" signature="405:784" ph="..." />
+            <marker date="1481051421844" expanded="true" signature="479:765" ph="..." />
+            <marker date="1481051421844" expanded="true" signature="504:735" ph="..." />
+            <marker date="1481051421844" expanded="true" signature="1115:1480" ph="..." />
+            <marker date="1481051421844" expanded="true" signature="1345:1458" ph="..." />
           </folding>
         </state>
       </provider>
@@ -656,20 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/views/EditCommentView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding>
-            <marker date="1481036877732" expanded="true" signature="202:787" ph="..." />
-            <marker date="1481036877732" expanded="true" signature="305:768" ph="..." />
-            <marker date="1481036877732" expanded="true" signature="483:548" ph="..." />
-            <marker date="1481036877732" expanded="true" signature="483:600" ph="..." />
-            <marker date="1481036877732" expanded="true" signature="626:744" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/views/AddCommentView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -724,26 +716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/UserController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="68" lean-forward="false" selection-start-line="28" selection-start-column="68" selection-end-line="28" selection-end-column="68" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/MovieController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="109" column="16" lean-forward="false" selection-start-line="109" selection-start-column="16" selection-end-line="109" selection-end-column="16" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/views/EditMovieView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -759,36 +731,6 @@
         <state relative-caret-position="136">
           <caret line="8" column="39" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="39" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/views/LoginView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1481042109214" expanded="true" signature="234:872" ph="..." />
-            <marker date="1481042109214" expanded="true" signature="310:853" ph="..." />
-            <marker date="1481042109214" expanded="true" signature="376:474" ph="..." />
-            <marker date="1481042109214" expanded="true" signature="566:668" ph="..." />
-            <marker date="1481042109214" expanded="true" signature="720:829" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/views/RegisterView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1481042109232" expanded="true" signature="266:921" ph="..." />
-            <marker date="1481042109232" expanded="true" signature="353:902" ph="..." />
-            <marker date="1481042109232" expanded="true" signature="419:517" ph="..." />
-            <marker date="1481042109232" expanded="true" signature="609:711" ph="..." />
-            <marker date="1481042109232" expanded="true" signature="763:878" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -816,11 +758,11 @@
           <caret line="57" column="29" lean-forward="false" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1481043151290" expanded="true" signature="405:784" ph="..." />
-            <marker date="1481043151290" expanded="true" signature="479:765" ph="..." />
-            <marker date="1481043151290" expanded="true" signature="504:735" ph="..." />
-            <marker date="1481043151290" expanded="true" signature="1115:1480" ph="..." />
-            <marker date="1481043151290" expanded="true" signature="1345:1458" ph="..." />
+            <marker date="1481051421844" expanded="true" signature="405:784" ph="..." />
+            <marker date="1481051421844" expanded="true" signature="479:765" ph="..." />
+            <marker date="1481051421844" expanded="true" signature="504:735" ph="..." />
+            <marker date="1481051421844" expanded="true" signature="1115:1480" ph="..." />
+            <marker date="1481051421844" expanded="true" signature="1345:1458" ph="..." />
           </folding>
         </state>
       </provider>
@@ -835,11 +777,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/views/EditCommentView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <marker date="1481036877732" expanded="true" signature="202:787" ph="..." />
+            <marker date="1481036877732" expanded="true" signature="305:768" ph="..." />
+            <marker date="1481036877732" expanded="true" signature="483:548" ph="..." />
+            <marker date="1481036877732" expanded="true" signature="483:600" ph="..." />
+            <marker date="1481036877732" expanded="true" signature="626:744" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/MovieController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="102" column="9" lean-forward="false" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/views/RegisterView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1481042109232" expanded="true" signature="266:921" ph="..." />
+            <marker date="1481042109232" expanded="true" signature="353:902" ph="..." />
+            <marker date="1481042109232" expanded="true" signature="419:517" ph="..." />
+            <marker date="1481042109232" expanded="true" signature="609:711" ph="..." />
+            <marker date="1481042109232" expanded="true" signature="763:878" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/views/LoginView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1481042109214" expanded="true" signature="234:872" ph="..." />
+            <marker date="1481042109214" expanded="true" signature="310:853" ph="..." />
+            <marker date="1481042109214" expanded="true" signature="376:474" ph="..." />
+            <marker date="1481042109214" expanded="true" signature="566:668" ph="..." />
+            <marker date="1481042109214" expanded="true" signature="720:829" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/styles/movie-catalogue.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="90" column="59" lean-forward="false" selection-start-line="90" selection-start-column="59" selection-end-line="90" selection-end-column="59" />
+        <state relative-caret-position="269">
+          <caret line="95" column="12" lean-forward="false" selection-start-line="95" selection-start-column="12" selection-end-line="95" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/UserController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="47" column="47" lean-forward="false" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

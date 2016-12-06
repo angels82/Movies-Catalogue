@@ -97,6 +97,11 @@ class MovieController {
         let _self = this;
         let data = this.addCommentView.submitData();
 
+        if (data.text == '') {
+            this.handleError('Comment cannot be empty!');
+            return;
+        }
+
         this.commentModel.createComment(data)
             .then(function () {
                 _self.renderer.renderInfo('Comment created.');
@@ -114,6 +119,11 @@ class MovieController {
         let allData = this.editCommentView.submitData();
         let commentId = allData.commentId;
         let data = allData.data;
+
+        if (data.text == '') {
+            this.handleError('Comment cannot be empty!');
+            return;
+        }
 
         this.commentModel.updateComment(commentId, data)
             .then(function () {

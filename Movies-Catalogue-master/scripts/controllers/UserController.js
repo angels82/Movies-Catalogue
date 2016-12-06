@@ -19,6 +19,8 @@ class UserController {
         let userData = this.loginView.submitData();
         let _self = this;
 
+        if(userData.username == '' || userData.password == '') return;
+
         this.model.login(userData).then(function (data) {
             sessionStorage.setItem('authToken', data._kmd.authtoken);
             sessionStorage.setItem('userId', data._id);
@@ -33,14 +35,17 @@ class UserController {
         let userData = this.registerView.submitData();
         let _self = this;
 
+        if(userData.username == '' || userData.password == '') return;
+
         this.model.register(userData).then(function (data) {
+            console.log('Register');
             sessionStorage.setItem('authToken', data._kmd.authtoken);
             sessionStorage.setItem('userId', data._id);
             sessionStorage.setItem('username', data.username);
 
             _self.renderer.renderInfo('Registration successful.');
 
-            _self.listMoviesView.renderView();
+            _self.movieController.listMovies();
         }).catch((errorMessage) => _self.handleError(errorMessage));
     }
 
