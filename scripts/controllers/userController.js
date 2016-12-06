@@ -23,7 +23,6 @@ class UserController {
             sessionStorage.setItem('authToken', data._kmd.authtoken);
             sessionStorage.setItem('userId', data._id);
             sessionStorage.setItem('username', data.username);
-            console.log(this.renderer);
             _self.renderer.renderInfo('Login successful.');
 
             _self.movieController.getMovies();

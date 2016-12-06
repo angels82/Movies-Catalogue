@@ -25,6 +25,6 @@ class Authentication {
     }
 
     getUsername() {
-        sessionStorage.getItem('username');
+        return sessionStorage.getItem('username');
     }
 }
