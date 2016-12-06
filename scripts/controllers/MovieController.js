@@ -39,14 +39,15 @@ class MovieController {
             });
     }
 
-    listMyMovies(userId) {
+    listMyMovies() {
         let _self = this;
 
         this.movieModel.getMovies()
             .then(function (movies) {
-                let myMovies = movies.filter((movie) => movie._acl.creator == userId);
+                console.log(movies)
+                let myMovies = movies.filter((movie) => movie._acl.creator == sessionStorage.getItem('userId'));
                 _self.listMoviesView.renderView(myMovies,'My Movies');
-                _self.renderer.renderInfo('Movies loaded.');
+                _self.renderer.renderInfo('My Movies loaded.');
             })
             .catch(function (errorMessage) {
                 _self.renderer.handleError(errorMessage);

@@ -5,9 +5,9 @@
 
 
 class ListMoviesView {
-    constructor(renderer, movieController) {
+    constructor(renderer) {
         this.renderer = renderer;
-        this.movieController = movieController;
+        // this.movieController = movieController;
     }
 
     renderView(movies,viewTitle) {
