@@ -3,7 +3,7 @@
 // then handles the result from the request
 
 class MovieController {
-    constructor(movieModel, commentModel, homeView, listMoviesView, createMovieView, editMovieView, movieDetailsView, addCommentView, editCommentView, deleteCommentView, renderer) {
+    constructor(movieModel, commentModel, homeView, listMoviesView, createMovieView, editMovieView, movieDetailsView, addCommentView, editCommentView, deleteCommentView, deleteMovieView, renderer) {
         this.movieModel = movieModel;
         this.commentModel = commentModel;
         this.homeView = homeView;
@@ -14,6 +14,7 @@ class MovieController {
         this.addCommentView = addCommentView;
         this.editCommentView = editCommentView;
         this.deleteCommentView = deleteCommentView;
+        this.deleteMovieView = deleteMovieView;
         this.renderer = renderer;
     }
 
@@ -82,8 +83,14 @@ class MovieController {
             .catch((errorMessage) => _self.handleError(errorMessage));
     }
 
-    deleteMovie(movieId) {
+    showDeleteMovieView(movie) {
+        this.deleteMovieView.renderView(this, movie);
+    }
+
+    deleteMovie() {
         let _self = this;
+        let movieId = this.deleteMovieView.submitData();
+
         this.movieModel.deleteMovie(movieId)
             .then(function(){
                 _self.renderer.renderInfo('Movie deleted.');

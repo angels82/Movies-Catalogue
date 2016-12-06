@@ -56,7 +56,7 @@ class ListMoviesView {
                     .append($('<button>')
                         .attr('id','buttonDelete')
                         .text("Delete")
-                        .click(movieController.deleteMovie.bind(movieController,movie._id)));
+                        .click(movieController.showDeleteMovieView.bind(movieController,movie)));
             }
 
             return row;
