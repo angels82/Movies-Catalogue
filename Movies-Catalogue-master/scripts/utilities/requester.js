@@ -24,7 +24,8 @@ function htmlEscape(string){
 function escapeObject(data){
 
     for (let label in data){
-        data[label] = htmlEscape(data[label]);
+        if (label!='trailerUrl')
+            data[label] = htmlEscape(data[label]);
     }
     return data;
 }

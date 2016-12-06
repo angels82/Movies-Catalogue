@@ -27,6 +27,10 @@ class EditMovieView {
                     <div>
                         <textarea name="descr" rows="10"></textarea>
                     </div>
+                    <div>Trailer Url (youtube):</div>
+                    <div>
+                         <input type="text" name="trailerUrl">
+                    </div>
                     <div>
                         <input type="submit" id="buttonEditMovie" value="Save"/>
                     </div>
@@ -42,6 +46,7 @@ class EditMovieView {
         view.find('#formEditMovie [name=director]').val(movie.director);
         view.find('#formEditMovie [name=year]').val(movie.year);
         view.find('#formEditMovie [name=descr]').val(movie.description);
+        view.find('#formEditMovie [name=trailerUrl]').val(movie.trailerUrl);
 
         view.find('#buttonEditMovie').click(movieController.editMovie.bind(movieController));
 
@@ -55,7 +60,8 @@ class EditMovieView {
             title: $('#formEditMovie [name=title]').val(),
             director: $('#formEditMovie [name=director]').val(),
             year: $('#formEditMovie [name=year]').val(),
-            description: $('#formEditMovie [name=descr]').val()
+            description: $('#formEditMovie [name=descr]').val(),
+            trailerUrl: $('#formEditMovie [name=trailerUrl]').val()
         };
 
         return data;

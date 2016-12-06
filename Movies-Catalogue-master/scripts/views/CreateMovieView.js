@@ -27,6 +27,10 @@ class CreateMovieView {
                     <div>
                         <textarea name="descr" rows="10"></textarea>
                     </div>
+                    <div>Trailer Url (youtube):</div>
+                    <div>
+                         <input type="text" name="trailerUrl">
+                    </div>
                     <div>
                         <input type="submit" id="buttonCreateMovie" value="Create"/>
                     </div>
@@ -49,7 +53,8 @@ class CreateMovieView {
             title:$('#viewCreateMovie [name=title]').val(),
             director:$('#viewCreateMovie [name=director]').val(),
             year:$('#viewCreateMovie [name=year]').val(),
-            description:$('#viewCreateMovie [name=descr]').val()
+            description:$('#viewCreateMovie [name=descr]').val(),
+            trailerUrl:$('#viewCreateMovie [name=trailerUrl]').val()
         };
 
         return data;

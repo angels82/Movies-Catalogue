@@ -1,6 +1,3 @@
-//TODO: add comments author
-
-
 class MovieDetailsView {
     constructor(rendrer) {
         this.renderer = rendrer;
@@ -23,9 +20,20 @@ class MovieDetailsView {
             </div>
             `
         );
+// Add trailer if specified
+        if (movie.trailerUrl){
+            let embededUrl = 'https://www.youtube.com/embed/' + movie.trailerUrl.split('=').pop();
+            $(` <br>
+                <div id="trailer">
+                    <iframe  width="420" height="315"
+                        src="${embededUrl}">
+                    </iframe>
+                </div>
+            `).insertBefore(view.find('#comments'));
+        }
 
+//List the comments
         if (comments.length>0){
-            //console.log(comments.length);
             view.find('#comments').append($('<ul>').addClass("comment-list"));
             for (let comment of comments){
                 let commentLi = $('<li>')
@@ -33,9 +41,11 @@ class MovieDetailsView {
                         .append($('<div class="commentText">').text('"' + comment.text + '"'));
                 if(comment.author == sessionStorage.getItem('username')) {
                     commentLi
-                        .append($('<button id="buttonEditComment">Edit</button>').click(movieController.showEditCommentView.bind(movieController, movie, comment)))
+                        .append($('<button id="buttonEditComment">Edit</button>')
+                            .click(movieController.showEditCommentView.bind(movieController, movie, comment)))
                         .append(' ')
-                        .append($('<button id="buttonDeleteComment">Delete</button>').click(movieController.showDeleteCommentView.bind(movieController, movie, comment)));
+                        .append($('<button id="buttonDeleteComment">Delete</button>')
+                            .click(movieController.showDeleteCommentView.bind(movieController, movie, comment)));
                 }
 
                 view.find('#comments .comment-list')
