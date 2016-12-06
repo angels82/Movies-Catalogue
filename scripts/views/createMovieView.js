@@ -1,19 +1,56 @@
 // Renders the Create Movie View through the passed in renderer
 // Sends movie data to moviesController by submitData()
 
+//TODO: attach submit function
+
 class CreateModelView {
     constructor(renderer) {
         this.renderer = renderer;
     }
 
-    renderView() {
-        let view = $('<div>');
+    renderView(movieController) {
+        let view = $(`
+           <div id="viewCreateMovie">
+                <h1>Create new movie</h1>
+                <form id="formCreateMovie">
+                    <div>Title</div>
+                    <div>
+                        <input type="text" name="title" required />
+                    </div>
+                    <div>Director</div>
+                    <div>
+                        <input type="text" name="director" required />
+                    </div>
+                    <div>Year</div>
+                    <div>
+                        <input type="number" name="year" required />
+                    </div>
+                    <div>Description</div>
+                    <div>
+                        <textarea name="descr" rows="10"></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" id="buttonCreateMovie" value="Create"/>
+                    </div>
+                </form>
+            </div>
+        `);
+
+        view.find('#buttonCreateMovie').click(function(){
+
+        });
+
 
         this.renderer.renderView(view);
     }
 
     submitData() {
-        let data = {};
+        let data = {
+            title:$('#viewCreateMovie [name=title]').val(),
+            director:$('#viewCreateMovie [name=director]').val(),
+            year:$('#viewCreateMovie [name=year]').val(),
+            description:$('#viewCreateMovie [name=descr]').val()
+        };
 
         return data;
     }

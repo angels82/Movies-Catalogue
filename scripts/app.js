@@ -25,10 +25,16 @@
     let commentController = new CommentsController(commentModel);
 
     const notLoggedUserLinks = [
-        $('<a href="#" id="linkHome">Home</a>').click(homeView.renderView),
-        $('<a href="#" id="linkLogin">Login</a>').click(loginView.renderView),
-        $('<a href="#" id="linkRegister">Register</a>').click(registerView.renderView)
+        $('<a href="#" id="linkHome">Home</a>')
+            .click(homeView.renderView.bind(homeView)),
+
+        $('<a href="#" id="linkLogin">Login</a>')
+            .click(loginView.renderView.bind(loginView,userController)),
+
+        $('<a href="#" id="linkRegister">Register</a>')
+            .click(registerView.renderView.bind(registerView,userController))
     ];
+
     const loggedUserLinks = [
         $('<a href="#" id="linkListMovies">List Movies</a>').click(movieController.getMovies.bind(movieController)).hide(),
         $('<a href="#" id="linkListMyMovies">My Movies</a>').click(movieController.listMyMovies.bind(movieController)).hide(),
@@ -39,6 +45,7 @@
     $('#menu').append(notLoggedUserLinks);
     $('#menu').append(loggedUserLinks);
 
+    // loginView.renderView(userController);
     homeView.renderView();
 
 
