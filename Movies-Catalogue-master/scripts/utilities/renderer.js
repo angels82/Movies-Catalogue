@@ -29,6 +29,7 @@ class Renderer {
     }
 
     renderView(element) {
+        $('#errorBox').hide();
         this.renderLinks();
         this.renderGreeting();
 

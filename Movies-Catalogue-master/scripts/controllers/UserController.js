@@ -35,10 +35,17 @@ class UserController {
         let userData = this.registerView.submitData();
         let _self = this;
 
-        if(userData.username == '' || userData.password == '') return;
+        if(!/^[\w]+$/.test(userData.username)){
+            this.renderer.renderError('Username must be alphanumeric!');
+            return;
+        }
+
+        if(userData.password == '') {
+            this.renderer.renderError('Emtpy password not allowed!');
+            return;
+        }
 
         this.model.register(userData).then(function (data) {
-            console.log('Register');
             sessionStorage.setItem('authToken', data._kmd.authtoken);
             sessionStorage.setItem('userId', data._id);
             sessionStorage.setItem('username', data.username);
