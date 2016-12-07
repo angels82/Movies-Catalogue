@@ -7,6 +7,7 @@ class MovieDetailsView {
         let view = $(
             `
             <div movieId=${movie._id} class="movieDetailsView">
+                <h1>Movie Details</h1>
                 <div class="movieViewHeader">Title:</div>
                 <div class="movieViewData">${movie.title}</div>
                 <div class="movieViewHeader">Director:</div>
@@ -22,11 +23,11 @@ class MovieDetailsView {
         );
 // Add trailer if specified
         if (movie.trailerUrl){
-            let embededUrl = 'https://www.youtube.com/embed/' + movie.trailerUrl.split('=').pop();
+            let embeddedUrl = 'https://www.youtube.com/embed/' + movie.trailerUrl.split('=').pop();
             $(` <br>
                 <div id="trailer">
                     <iframe  width="420" height="315"
-                        src="${embededUrl}">
+                        src="${embeddedUrl}">
                     </iframe>
                 </div>
             `).insertBefore(view.find('#comments'));
@@ -38,7 +39,7 @@ class MovieDetailsView {
             for (let comment of comments){
                 let commentLi = $('<li>')
                         .append($('<div class="commentAuthor">').text(comment.author + ':'))
-                        .append($('<div class="commentText">').text('"' + comment.text + '"'));
+                        .append($('<div class="commentText">').text(comment.text));
                 if(comment.author == sessionStorage.getItem('username')) {
                     commentLi
                         .append($('<button id="buttonEditComment">Edit</button>')

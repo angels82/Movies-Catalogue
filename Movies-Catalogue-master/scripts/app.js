@@ -52,6 +52,7 @@
     renderer.setLinks(notLoggedUserLinks, loggedUserLinks);
     $('#menu').append(notLoggedUserLinks);
     $('#menu').append(loggedUserLinks);
+    $('#menu').append($('<span id="loggedInUser"></span>'));
 
     homeView.renderView();
 

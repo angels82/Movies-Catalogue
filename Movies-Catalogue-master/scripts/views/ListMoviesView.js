@@ -20,7 +20,6 @@ class ListMoviesView {
                         <th>Director</th>
                         <th>Year</th>
                         <th>Description</th>
-                        <th>Trailer</th>
                         <th>Actions</th>
                     </tr>
     
@@ -37,9 +36,6 @@ class ListMoviesView {
             let description = movie.description.substr(0, 50);
             if (description.length == 50)
                 description = description.substring(0, description.lastIndexOf(' ')) + '...';
-            let trailer = '';
-            if (movie.trailerUrl)
-                trailer =`<a href="${movie.trailerUrl}" target="_blank">Watch trailer</a>`;
 
             let row =  $(`
                 <tr movieID=${movie._id}>
@@ -47,7 +43,6 @@ class ListMoviesView {
                     <td>${movie.director}</td>
                     <td>${movie.year}</td>
                     <td>${description}</td>
-                    <td>${trailer}</td>
                     <td class="movieActions">                   
                         <button id="buttonDetails">Details</button>
                     </td>
